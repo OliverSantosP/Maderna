@@ -4,9 +4,25 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bbf59456d00e441585a1cb82482cf6ab" Name="Diagram1" >
-        <EntityTypeShape EntityType="Model1.Products" Width="1.5" PointX="1.875" PointY="1.125" />
-      </Diagram>
+      <Diagram DiagramId="bbf59456d00e441585a1cb82482cf6ab" Name="Diagram1" ZoomLevel="86" >
+        <EntityTypeShape EntityType="Model1.Products" Width="1.5" PointX="0.625" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.Clients" Width="1.5" PointX="5.875" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.Status" Width="1.5" PointX="3.25" PointY="3.625" />
+        <EntityTypeShape EntityType="Model1.Galleries" Width="1.5" PointX="0.75" PointY="5.375" />
+        <EntityTypeShape EntityType="Model1.Pictures" Width="1.5" PointX="3.25" PointY="8" />
+        <EntityTypeShape EntityType="Model1.Categories" Width="1.5" PointX="3.25" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.Users" Width="1.5" PointX="6.125" PointY="6.25" />
+        <AssociationConnector Association="Model1.CategoriesProducts" />
+        <AssociationConnector Association="Model1.StatusProducts" />
+        <AssociationConnector Association="Model1.GalleriesProducts" />
+        <AssociationConnector Association="Model1.PicturesProducts" />
+        <AssociationConnector Association="Model1.GalleriesClients" />
+        <AssociationConnector Association="Model1.StatusClients" />
+        <AssociationConnector Association="Model1.PicturesClients" />
+        <AssociationConnector Association="Model1.UsersStatus" />
+        <AssociationConnector Association="Model1.StatusCategories" />
+        <AssociationConnector Association="Model1.GalleriesPictures" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
