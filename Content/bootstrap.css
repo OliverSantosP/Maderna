@@ -2411,13 +2411,20 @@ input[type="button"].btn-block {
           transition: height 0.35s ease;
 }
 
+	IMG.center{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
  
   font-family: 'AvenirHeavy';
-  src: url('~/fonts/Avenir_LT_85_Heavy.woff') format('woff');
+  src: url('/fonts/Avenir_LT_85_Heavy.woff') format('woff');
+
   font-family: 'AvenirMedium';
   src: url('/fonts/Avenir_LT_65_Medium.woff') format('woff');
 }

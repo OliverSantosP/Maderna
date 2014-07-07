@@ -209,12 +209,18 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Images\Back.png" />
-    <Content Include="Content\Images\Footer_Icons.png" />
-    <Content Include="Content\Images\Marco_Bottom.png" />
-    <Content Include="Content\Images\Marco_Middle.png" />
-    <Content Include="Content\Images\Marco_Top.png" />
-    <Content Include="Content\Images\Next.png" />
+    <Content Include="Content\images\Back.png" />
+    <Content Include="Content\images\Footer_Icons.png" />
+    <Content Include="Content\images\Marco_Bottom.png" />
+    <Content Include="Content\images\Marco_Middle.png" />
+    <Content Include="Content\images\Marco_Top.png" />
+    <Content Include="Content\images\Next.png" />
+    <Content Include="Content\images\Pictures-1.jpg" />
+    <Content Include="Content\images\Pictures-2.jpg" />
+    <Content Include="Content\images\Pictures-3.jpg" />
+    <Content Include="Content\css\owl.carousel.css" />
+    <Content Include="Content\css\owl.theme.css" />
+    <Content Include="Content\css\owl.transitions.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -250,6 +256,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\owl.carousel.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
