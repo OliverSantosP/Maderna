@@ -318,6 +318,12 @@ footer{
 		letter-spacing: 0.200pc;
 }
 
+footer>p>img{
+    padding:3px;
+}
+
+
+
 html {
   font-size: 62.5%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -4565,16 +4571,16 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse .navbar-toggle {
-  border-color: #333333;
+
 }
 
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-  background-color: #333333;
+  background-color: #ffffff;
 }
 
 .navbar-inverse .navbar-toggle .icon-bar {
-  background-color: #ffffff;
+  background-color: #605f60;
 }
 
 .navbar-inverse .navbar-collapse,
