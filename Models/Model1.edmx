@@ -4,374 +4,89 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="Model1StoreContainer">
-    <EntitySet Name="Products" EntityType="Model1.Store.Products" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Clients" EntityType="Model1.Store.Clients" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Galleries" EntityType="Model1.Store.Galleries" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Pictures" EntityType="Model1.Store.Pictures" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Categories" EntityType="Model1.Store.Categories" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Users" EntityType="Model1.Store.Users" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Status" EntityType="Model1.Store.Status" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="ProductsStatus" Association="Model1.Store.ProductsStatus">
-      <End Role="Products" EntitySet="Products" />
-      <End Role="Status" EntitySet="Status" />
-    </AssociationSet>
-    <AssociationSet Name="ProductsUsers" Association="Model1.Store.ProductsUsers">
-      <End Role="Products" EntitySet="Products" />
-      <End Role="Users" EntitySet="Users" />
-    </AssociationSet>
-    <AssociationSet Name="ProductsCategories" Association="Model1.Store.ProductsCategories">
-      <End Role="Products" EntitySet="Products" />
-      <End Role="Categories" EntitySet="Categories" />
-    </AssociationSet>
-    <AssociationSet Name="ProductsGalleries" Association="Model1.Store.ProductsGalleries">
-      <End Role="Products" EntitySet="Products" />
-      <End Role="Galleries" EntitySet="Galleries" />
-    </AssociationSet>
-    <AssociationSet Name="ProductsPictures" Association="Model1.Store.ProductsPictures">
-      <End Role="Products" EntitySet="Products" />
-      <End Role="Pictures" EntitySet="Pictures" />
-    </AssociationSet>
-    <AssociationSet Name="CategoriesStatus" Association="Model1.Store.CategoriesStatus">
-      <End Role="Categories" EntitySet="Categories" />
-      <End Role="Status" EntitySet="Status" />
-    </AssociationSet>
-    <AssociationSet Name="GalleriesStatus" Association="Model1.Store.GalleriesStatus">
-      <End Role="Galleries" EntitySet="Galleries" />
-      <End Role="Status" EntitySet="Status" />
-    </AssociationSet>
-    <AssociationSet Name="ClientsGalleries" Association="Model1.Store.ClientsGalleries">
-      <End Role="Clients" EntitySet="Clients" />
-      <End Role="Galleries" EntitySet="Galleries" />
-    </AssociationSet>
-    <AssociationSet Name="ClientsPictures" Association="Model1.Store.ClientsPictures">
-      <End Role="Clients" EntitySet="Clients" />
-      <End Role="Pictures" EntitySet="Pictures" />
-    </AssociationSet>
-    <AssociationSet Name="ClientsStatus" Association="Model1.Store.ClientsStatus">
-      <End Role="Clients" EntitySet="Clients" />
-      <End Role="Status" EntitySet="Status" />
-    </AssociationSet>
-    <AssociationSet Name="UsersStatus" Association="Model1.Store.UsersStatus">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="Status" EntitySet="Status" />
-    </AssociationSet>
-    <AssociationSet Name="PicturesGalleries" Association="Model1.Store.PicturesGalleries">
-      <End Role="Pictures" EntitySet="Pictures" />
-      <End Role="Galleries" EntitySet="Galleries" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="Products">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Category" Type="int" Nullable="false" />
-    <Property Name="Gallery" Type="int" Nullable="false" />
-    <Property Name="MainPicture" Type="int" Nullable="false" />
-    <Property Name="CreatedBy" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="DateCreated" Type="datetime" Nullable="false" />
-    <Property Name="LastUpdate" Type="datetime" Nullable="false" />
-    <Property Name="Status" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Clients">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Gallery" Type="int" Nullable="false" />
-    <Property Name="MainPicture" Type="int" Nullable="false" />
-    <Property Name="DateCreated" Type="datetime" Nullable="false" />
-    <Property Name="LastUpdate" Type="datetime" Nullable="false" />
-    <Property Name="Status" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Galleries">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="DateCreated" Type="datetime" Nullable="false" />
-    <Property Name="LastUpdate" Type="datetime" Nullable="false" />
-    <Property Name="Status" Type="int" Nullable="false" />
-    <Property Name="Product_Id" Type="int" Nullable="false" />
-    <Property Name="Client_Id" Type="int" Nullable="false" />
-    <Property Name="Picture_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Pictures">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Gallery" Type="int" Nullable="false" />
-    <Property Name="Path" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="DateCreated" Type="datetime" Nullable="false" />
-    <Property Name="Status" Type="int" Nullable="false" />
-    <Property Name="Product_Id" Type="int" Nullable="false" />
-    <Property Name="Client_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Categories">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Status" Type="int" Nullable="false" />
-    <Property Name="Product_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Users">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="LastLoginDate" Type="int" Nullable="false" />
-    <Property Name="Status" Type="int" Nullable="false" />
-    <Property Name="Product_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Status">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Product_Id" Type="int" Nullable="false" />
-    <Property Name="Category_Id" Type="int" Nullable="false" />
-    <Property Name="Gallery_Id" Type="int" Nullable="false" />
-    <Property Name="Client_Id" Type="int" Nullable="false" />
-    <Property Name="User_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <Association Name="ProductsStatus">
-    <End Role="Products" Type="Model1.Store.Products" Multiplicity="1" />
-    <End Role="Status" Type="Model1.Store.Status" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Products">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Status">
-        <PropertyRef Name="Product_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ProductsUsers">
-    <End Role="Products" Type="Model1.Store.Products" Multiplicity="1" />
-    <End Role="Users" Type="Model1.Store.Users" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Products">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Users">
-        <PropertyRef Name="Product_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ProductsCategories">
-    <End Role="Products" Type="Model1.Store.Products" Multiplicity="1" />
-    <End Role="Categories" Type="Model1.Store.Categories" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Products">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Categories">
-        <PropertyRef Name="Product_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ProductsGalleries">
-    <End Role="Products" Type="Model1.Store.Products" Multiplicity="1" />
-    <End Role="Galleries" Type="Model1.Store.Galleries" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Products">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Galleries">
-        <PropertyRef Name="Product_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ProductsPictures">
-    <End Role="Products" Type="Model1.Store.Products" Multiplicity="1" />
-    <End Role="Pictures" Type="Model1.Store.Pictures" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Products">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Pictures">
-        <PropertyRef Name="Product_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="CategoriesStatus">
-    <End Role="Categories" Type="Model1.Store.Categories" Multiplicity="1" />
-    <End Role="Status" Type="Model1.Store.Status" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Categories">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Status">
-        <PropertyRef Name="Category_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="GalleriesStatus">
-    <End Role="Galleries" Type="Model1.Store.Galleries" Multiplicity="1" />
-    <End Role="Status" Type="Model1.Store.Status" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Galleries">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Status">
-        <PropertyRef Name="Gallery_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ClientsGalleries">
-    <End Role="Clients" Type="Model1.Store.Clients" Multiplicity="1" />
-    <End Role="Galleries" Type="Model1.Store.Galleries" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Clients">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Galleries">
-        <PropertyRef Name="Client_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ClientsPictures">
-    <End Role="Clients" Type="Model1.Store.Clients" Multiplicity="1" />
-    <End Role="Pictures" Type="Model1.Store.Pictures" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Clients">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Pictures">
-        <PropertyRef Name="Client_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ClientsStatus">
-    <End Role="Clients" Type="Model1.Store.Clients" Multiplicity="1" />
-    <End Role="Status" Type="Model1.Store.Status" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Clients">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Status">
-        <PropertyRef Name="Client_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="UsersStatus">
-    <End Role="Users" Type="Model1.Store.Users" Multiplicity="1" />
-    <End Role="Status" Type="Model1.Store.Status" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Users">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Status">
-        <PropertyRef Name="User_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PicturesGalleries">
-    <End Role="Pictures" Type="Model1.Store.Pictures" Multiplicity="1" />
-    <End Role="Galleries" Type="Model1.Store.Galleries" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Pictures">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Galleries">
-        <PropertyRef Name="Picture_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-</Schema></edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="Model1TargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
-        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Products" EntityType="Model1.Products" />
-          <EntitySet Name="Clients" EntityType="Model1.Clients" />
-          <EntitySet Name="Galleries" EntityType="Model1.Galleries" />
-          <EntitySet Name="Pictures" EntityType="Model1.Pictures" />
+        <EntityContainer Name="Model1Container1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categories" EntityType="Model1.Categories" />
-          <EntitySet Name="Users" EntityType="Model1.Users" />
+          <EntitySet Name="Clients" EntityType="Model1.Clients" />
           <EntitySet Name="Status" EntityType="Model1.Status" />
-          <AssociationSet Name="ProductsStatus" Association="Model1.ProductsStatus">
-            <End Role="Products" EntitySet="Products" />
+          <EntitySet Name="Galleries" EntityType="Model1.Galleries" />
+          <EntitySet Name="Products" EntityType="Model1.Products" />
+          <EntitySet Name="Pictures" EntityType="Model1.Pictures" />
+          <EntitySet Name="Users" EntityType="Model1.Users" />
+          <AssociationSet Name="StatusCategories" Association="Model1.StatusCategories">
             <End Role="Status" EntitySet="Status" />
-          </AssociationSet>
-          <AssociationSet Name="ProductsUsers" Association="Model1.ProductsUsers">
-            <End Role="Products" EntitySet="Products" />
-            <End Role="Users" EntitySet="Users" />
-          </AssociationSet>
-          <AssociationSet Name="ProductsCategories" Association="Model1.ProductsCategories">
-            <End Role="Products" EntitySet="Products" />
             <End Role="Categories" EntitySet="Categories" />
           </AssociationSet>
-          <AssociationSet Name="ProductsGalleries" Association="Model1.ProductsGalleries">
-            <End Role="Products" EntitySet="Products" />
-            <End Role="Galleries" EntitySet="Galleries" />
+          <AssociationSet Name="StatusClients" Association="Model1.StatusClients">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Clients" EntitySet="Clients" />
           </AssociationSet>
-          <AssociationSet Name="ProductsPictures" Association="Model1.ProductsPictures">
-            <End Role="Products" EntitySet="Products" />
+          <AssociationSet Name="PicturesClients" Association="Model1.PicturesClients">
             <End Role="Pictures" EntitySet="Pictures" />
+            <End Role="Clients" EntitySet="Clients" />
           </AssociationSet>
-          <AssociationSet Name="CategoriesStatus" Association="Model1.CategoriesStatus">
+          <AssociationSet Name="StatusClients1" Association="Model1.StatusClients1">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="CategoriesProducts" Association="Model1.CategoriesProducts">
             <End Role="Categories" EntitySet="Categories" />
-            <End Role="Status" EntitySet="Status" />
+            <End Role="Products" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="GalleriesStatus" Association="Model1.GalleriesStatus">
+          <AssociationSet Name="GalleriesProducts" Association="Model1.GalleriesProducts">
             <End Role="Galleries" EntitySet="Galleries" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="PicturesProducts" Association="Model1.PicturesProducts">
+            <End Role="Pictures" EntitySet="Pictures" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="StatusProducts" Association="Model1.StatusProducts">
             <End Role="Status" EntitySet="Status" />
+            <End Role="Products" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="ClientsGalleries" Association="Model1.ClientsGalleries">
-            <End Role="Clients" EntitySet="Clients" />
+          <AssociationSet Name="GalleriesPictures" Association="Model1.GalleriesPictures">
             <End Role="Galleries" EntitySet="Galleries" />
-          </AssociationSet>
-          <AssociationSet Name="ClientsPictures" Association="Model1.ClientsPictures">
-            <End Role="Clients" EntitySet="Clients" />
             <End Role="Pictures" EntitySet="Pictures" />
           </AssociationSet>
-          <AssociationSet Name="ClientsStatus" Association="Model1.ClientsStatus">
-            <End Role="Clients" EntitySet="Clients" />
+          <AssociationSet Name="StatusPictures" Association="Model1.StatusPictures">
             <End Role="Status" EntitySet="Status" />
+            <End Role="Pictures" EntitySet="Pictures" />
           </AssociationSet>
-          <AssociationSet Name="UsersStatus" Association="Model1.UsersStatus">
+          <AssociationSet Name="StatusUsers" Association="Model1.StatusUsers">
+            <End Role="Status" EntitySet="Status" />
             <End Role="Users" EntitySet="Users" />
-            <End Role="Status" EntitySet="Status" />
           </AssociationSet>
-          <AssociationSet Name="PicturesGalleries" Association="Model1.PicturesGalleries">
-            <End Role="Pictures" EntitySet="Pictures" />
+          <AssociationSet Name="GalleriesClients" Association="Model1.GalleriesClients">
             <End Role="Galleries" EntitySet="Galleries" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="StatusGalleries" Association="Model1.StatusGalleries">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Galleries" EntitySet="Galleries" />
+          </AssociationSet>
+          <AssociationSet Name="UsersProducts" Association="Model1.UsersProducts">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Products" EntitySet="Products" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Products">
+        <EntityType Name="Categories">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
-          <Property Name="Description" Type="String" Nullable="true" />
-          <Property Name="Category" Type="Int32" Nullable="false" />
-          <Property Name="Gallery" Type="Int32" Nullable="false" />
-          <Property Name="MainPicture" Type="Int32" Nullable="false" />
-          <Property Name="CreatedBy" Type="String" Nullable="false" />
-          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
-          <Property Name="LastUpdate" Type="DateTime" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
           <Property Name="Status" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Status1" Relationship="Model1.ProductsStatus" FromRole="Products" ToRole="Status" />
-          <NavigationProperty Name="Users" Relationship="Model1.ProductsUsers" FromRole="Products" ToRole="Users" />
-          <NavigationProperty Name="Categories" Relationship="Model1.ProductsCategories" FromRole="Products" ToRole="Categories" />
-          <NavigationProperty Name="Galleries" Relationship="Model1.ProductsGalleries" FromRole="Products" ToRole="Galleries" />
-          <NavigationProperty Name="Pictures" Relationship="Model1.ProductsPictures" FromRole="Products" ToRole="Pictures" />
+          <NavigationProperty Name="Status1" Relationship="Model1.StatusCategories" FromRole="Categories" ToRole="Status" />
+          <NavigationProperty Name="Products" Relationship="Model1.CategoriesProducts" FromRole="Categories" ToRole="Products" />
         </EntityType>
         <EntityType Name="Clients">
           <Key>
@@ -383,11 +98,12 @@
           <Property Name="Gallery" Type="Int32" Nullable="false" />
           <Property Name="MainPicture" Type="Int32" Nullable="false" />
           <Property Name="DateCreated" Type="DateTime" Nullable="false" />
-          <Property Name="LastUpdate" Type="DateTime" Nullable="false" />
+          <Property Name="LastUpdate" Type="String" Nullable="false" />
           <Property Name="Status" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Galleries" Relationship="Model1.ClientsGalleries" FromRole="Clients" ToRole="Galleries" />
-          <NavigationProperty Name="Pictures" Relationship="Model1.ClientsPictures" FromRole="Clients" ToRole="Pictures" />
-          <NavigationProperty Name="Status1" Relationship="Model1.ClientsStatus" FromRole="Clients" ToRole="Status" />
+          <NavigationProperty Name="Status1" Relationship="Model1.StatusClients" FromRole="Clients" ToRole="Status" />
+          <NavigationProperty Name="Picture" Relationship="Model1.PicturesClients" FromRole="Clients" ToRole="Pictures" />
+          <NavigationProperty Name="Status2" Relationship="Model1.StatusClients1" FromRole="Clients" ToRole="Status" />
+          <NavigationProperty Name="Gallery1" Relationship="Model1.GalleriesClients" FromRole="Clients" ToRole="Galleries" />
         </EntityType>
         <EntityType Name="Status">
           <Key>
@@ -396,11 +112,13 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
           <Property Name="Description" Type="String" Nullable="false" />
-          <NavigationProperty Name="Product" Relationship="Model1.ProductsStatus" FromRole="Status" ToRole="Products" />
-          <NavigationProperty Name="Category" Relationship="Model1.CategoriesStatus" FromRole="Status" ToRole="Categories" />
-          <NavigationProperty Name="Gallery" Relationship="Model1.GalleriesStatus" FromRole="Status" ToRole="Galleries" />
-          <NavigationProperty Name="Client" Relationship="Model1.ClientsStatus" FromRole="Status" ToRole="Clients" />
-          <NavigationProperty Name="User" Relationship="Model1.UsersStatus" FromRole="Status" ToRole="Users" />
+          <NavigationProperty Name="Categories" Relationship="Model1.StatusCategories" FromRole="Status" ToRole="Categories" />
+          <NavigationProperty Name="Clients" Relationship="Model1.StatusClients" FromRole="Status" ToRole="Clients" />
+          <NavigationProperty Name="Clients1" Relationship="Model1.StatusClients1" FromRole="Status" ToRole="Clients" />
+          <NavigationProperty Name="Products" Relationship="Model1.StatusProducts" FromRole="Status" ToRole="Products" />
+          <NavigationProperty Name="Pictures" Relationship="Model1.StatusPictures" FromRole="Status" ToRole="Pictures" />
+          <NavigationProperty Name="Users" Relationship="Model1.StatusUsers" FromRole="Status" ToRole="Users" />
+          <NavigationProperty Name="Galleries" Relationship="Model1.StatusGalleries" FromRole="Status" ToRole="Galleries" />
         </EntityType>
         <EntityType Name="Galleries">
           <Key>
@@ -410,10 +128,30 @@
           <Property Name="DateCreated" Type="DateTime" Nullable="false" />
           <Property Name="LastUpdate" Type="DateTime" Nullable="false" />
           <Property Name="Status" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Product" Relationship="Model1.ProductsGalleries" FromRole="Galleries" ToRole="Products" />
-          <NavigationProperty Name="Status1" Relationship="Model1.GalleriesStatus" FromRole="Galleries" ToRole="Status" />
-          <NavigationProperty Name="Client" Relationship="Model1.ClientsGalleries" FromRole="Galleries" ToRole="Clients" />
-          <NavigationProperty Name="Picture" Relationship="Model1.PicturesGalleries" FromRole="Galleries" ToRole="Pictures" />
+          <NavigationProperty Name="Products" Relationship="Model1.GalleriesProducts" FromRole="Galleries" ToRole="Products" />
+          <NavigationProperty Name="Pictures" Relationship="Model1.GalleriesPictures" FromRole="Galleries" ToRole="Pictures" />
+          <NavigationProperty Name="Clients" Relationship="Model1.GalleriesClients" FromRole="Galleries" ToRole="Clients" />
+          <NavigationProperty Name="Status1" Relationship="Model1.StatusGalleries" FromRole="Galleries" ToRole="Status" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <Property Name="Category" Type="Int32" Nullable="false" />
+          <Property Name="Gallery" Type="Int32" Nullable="false" />
+          <Property Name="MainPicture" Type="Int32" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="LastUpdate" Type="DateTime" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category1" Relationship="Model1.CategoriesProducts" FromRole="Products" ToRole="Categories" />
+          <NavigationProperty Name="Gallery1" Relationship="Model1.GalleriesProducts" FromRole="Products" ToRole="Galleries" />
+          <NavigationProperty Name="Picture" Relationship="Model1.PicturesProducts" FromRole="Products" ToRole="Pictures" />
+          <NavigationProperty Name="Status1" Relationship="Model1.StatusProducts" FromRole="Products" ToRole="Status" />
+          <NavigationProperty Name="User" Relationship="Model1.UsersProducts" FromRole="Products" ToRole="Users" />
         </EntityType>
         <EntityType Name="Pictures">
           <Key>
@@ -422,22 +160,13 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Gallery" Type="Int32" Nullable="false" />
           <Property Name="Path" Type="String" Nullable="false" />
-          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateCreated" Type="String" Nullable="false" />
+          <Property Name="LastUpdate" Type="String" Nullable="false" />
           <Property Name="Status" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Product" Relationship="Model1.ProductsPictures" FromRole="Pictures" ToRole="Products" />
-          <NavigationProperty Name="Client" Relationship="Model1.ClientsPictures" FromRole="Pictures" ToRole="Clients" />
-          <NavigationProperty Name="Galleries" Relationship="Model1.PicturesGalleries" FromRole="Pictures" ToRole="Galleries" />
-        </EntityType>
-        <EntityType Name="Categories">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" />
-          <Property Name="Description" Type="String" Nullable="false" />
-          <Property Name="Status" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Product" Relationship="Model1.ProductsCategories" FromRole="Categories" ToRole="Products" />
-          <NavigationProperty Name="Status1" Relationship="Model1.CategoriesStatus" FromRole="Categories" ToRole="Status" />
+          <NavigationProperty Name="Clients" Relationship="Model1.PicturesClients" FromRole="Pictures" ToRole="Clients" />
+          <NavigationProperty Name="Products" Relationship="Model1.PicturesProducts" FromRole="Pictures" ToRole="Products" />
+          <NavigationProperty Name="Gallery1" Relationship="Model1.GalleriesPictures" FromRole="Pictures" ToRole="Galleries" />
+          <NavigationProperty Name="Status1" Relationship="Model1.StatusPictures" FromRole="Pictures" ToRole="Status" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -446,244 +175,190 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserName" Type="String" Nullable="false" />
           <Property Name="Password" Type="String" Nullable="false" />
-          <Property Name="LastLoginDate" Type="Int32" Nullable="false" />
+          <Property Name="LastLoginDate" Type="DateTime" Nullable="false" />
           <Property Name="Status" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Product" Relationship="Model1.ProductsUsers" FromRole="Users" ToRole="Products" />
-          <NavigationProperty Name="Status1" Relationship="Model1.UsersStatus" FromRole="Users" ToRole="Status" />
+          <NavigationProperty Name="Status1" Relationship="Model1.StatusUsers" FromRole="Users" ToRole="Status" />
+          <NavigationProperty Name="Products" Relationship="Model1.UsersProducts" FromRole="Users" ToRole="Products" />
         </EntityType>
-        <Association Name="ProductsStatus">
-          <End Type="Model1.Products" Role="Products" Multiplicity="1" />
-          <End Type="Model1.Status" Role="Status" Multiplicity="*" />
-        </Association>
-        <Association Name="ProductsUsers">
-          <End Type="Model1.Products" Role="Products" Multiplicity="1" />
-          <End Type="Model1.Users" Role="Users" Multiplicity="*" />
-        </Association>
-        <Association Name="ProductsCategories">
-          <End Type="Model1.Products" Role="Products" Multiplicity="1" />
+        <Association Name="StatusCategories">
+          <End Type="Model1.Status" Role="Status" Multiplicity="1" />
           <End Type="Model1.Categories" Role="Categories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Categories">
+              <PropertyRef Name="Status" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <Association Name="ProductsGalleries">
-          <End Type="Model1.Products" Role="Products" Multiplicity="1" />
-          <End Type="Model1.Galleries" Role="Galleries" Multiplicity="*" />
+        <Association Name="StatusClients">
+          <End Type="Model1.Status" Role="Status" Multiplicity="1" />
+          <End Type="Model1.Clients" Role="Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="Status" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <Association Name="ProductsPictures">
-          <End Type="Model1.Products" Role="Products" Multiplicity="1" />
-          <End Type="Model1.Pictures" Role="Pictures" Multiplicity="*" />
-        </Association>
-        <Association Name="CategoriesStatus">
-          <End Type="Model1.Categories" Role="Categories" Multiplicity="1" />
-          <End Type="Model1.Status" Role="Status" Multiplicity="*" />
-        </Association>
-        <Association Name="GalleriesStatus">
-          <End Type="Model1.Galleries" Role="Galleries" Multiplicity="1" />
-          <End Type="Model1.Status" Role="Status" Multiplicity="*" />
-        </Association>
-        <Association Name="ClientsGalleries">
-          <End Type="Model1.Clients" Role="Clients" Multiplicity="1" />
-          <End Type="Model1.Galleries" Role="Galleries" Multiplicity="*" />
-        </Association>
-        <Association Name="ClientsPictures">
-          <End Type="Model1.Clients" Role="Clients" Multiplicity="1" />
-          <End Type="Model1.Pictures" Role="Pictures" Multiplicity="*" />
-        </Association>
-        <Association Name="ClientsStatus">
-          <End Type="Model1.Clients" Role="Clients" Multiplicity="1" />
-          <End Type="Model1.Status" Role="Status" Multiplicity="*" />
-        </Association>
-        <Association Name="UsersStatus">
-          <End Type="Model1.Users" Role="Users" Multiplicity="1" />
-          <End Type="Model1.Status" Role="Status" Multiplicity="*" />
-        </Association>
-        <Association Name="PicturesGalleries">
+        <Association Name="PicturesClients">
           <End Type="Model1.Pictures" Role="Pictures" Multiplicity="1" />
+          <End Type="Model1.Clients" Role="Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pictures">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="MainPicture" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StatusClients1">
+          <End Type="Model1.Status" Role="Status" Multiplicity="1" />
+          <End Type="Model1.Clients" Role="Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CategoriesProducts">
+          <End Type="Model1.Categories" Role="Categories" Multiplicity="1" />
+          <End Type="Model1.Products" Role="Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="Category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GalleriesProducts">
+          <End Type="Model1.Galleries" Role="Galleries" Multiplicity="1" />
+          <End Type="Model1.Products" Role="Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Galleries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="Gallery" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PicturesProducts">
+          <End Type="Model1.Pictures" Role="Pictures" Multiplicity="1" />
+          <End Type="Model1.Products" Role="Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pictures">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="MainPicture" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StatusProducts">
+          <End Type="Model1.Status" Role="Status" Multiplicity="1" />
+          <End Type="Model1.Products" Role="Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GalleriesPictures">
+          <End Type="Model1.Galleries" Role="Galleries" Multiplicity="1" />
+          <End Type="Model1.Pictures" Role="Pictures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Galleries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pictures">
+              <PropertyRef Name="Gallery" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StatusPictures">
+          <End Type="Model1.Status" Role="Status" Multiplicity="1" />
+          <End Type="Model1.Pictures" Role="Pictures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pictures">
+              <PropertyRef Name="Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StatusUsers">
+          <End Type="Model1.Status" Role="Status" Multiplicity="1" />
+          <End Type="Model1.Users" Role="Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GalleriesClients">
+          <End Type="Model1.Galleries" Role="Galleries" Multiplicity="1" />
+          <End Type="Model1.Clients" Role="Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Galleries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="Gallery" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StatusGalleries">
+          <End Type="Model1.Status" Role="Status" Multiplicity="1" />
           <End Type="Model1.Galleries" Role="Galleries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Galleries">
+              <PropertyRef Name="Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UsersProducts">
+          <End Type="Model1.Users" Role="Users" Multiplicity="1" />
+          <End Type="Model1.Products" Role="Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
-    <EntitySetMapping Name="Products">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.Products)">
-        <MappingFragment StoreEntitySet="Products">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Category" ColumnName="Category" />
-          <ScalarProperty Name="Gallery" ColumnName="Gallery" />
-          <ScalarProperty Name="MainPicture" ColumnName="MainPicture" />
-          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
-          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Clients">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.Clients)">
-        <MappingFragment StoreEntitySet="Clients">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Gallery" ColumnName="Gallery" />
-          <ScalarProperty Name="MainPicture" ColumnName="MainPicture" />
-          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
-          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Galleries">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.Galleries)">
-        <MappingFragment StoreEntitySet="Galleries">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
-          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Pictures">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.Pictures)">
-        <MappingFragment StoreEntitySet="Pictures">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Gallery" ColumnName="Gallery" />
-          <ScalarProperty Name="Path" ColumnName="Path" />
-          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Categories">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.Categories)">
-        <MappingFragment StoreEntitySet="Categories">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.Users)">
-        <MappingFragment StoreEntitySet="Users">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Status">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.Status)">
-        <MappingFragment StoreEntitySet="Status">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <AssociationSetMapping Name="ProductsStatus" TypeName="Model1.ProductsStatus" StoreEntitySet="Status">
-      <EndProperty Name="Products">
-        <ScalarProperty Name="Id" ColumnName="Product_Id" />
-      </EndProperty>
-      <EndProperty Name="Status">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ProductsUsers" TypeName="Model1.ProductsUsers" StoreEntitySet="Users">
-      <EndProperty Name="Products">
-        <ScalarProperty Name="Id" ColumnName="Product_Id" />
-      </EndProperty>
-      <EndProperty Name="Users">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ProductsCategories" TypeName="Model1.ProductsCategories" StoreEntitySet="Categories">
-      <EndProperty Name="Products">
-        <ScalarProperty Name="Id" ColumnName="Product_Id" />
-      </EndProperty>
-      <EndProperty Name="Categories">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ProductsGalleries" TypeName="Model1.ProductsGalleries" StoreEntitySet="Galleries">
-      <EndProperty Name="Products">
-        <ScalarProperty Name="Id" ColumnName="Product_Id" />
-      </EndProperty>
-      <EndProperty Name="Galleries">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ProductsPictures" TypeName="Model1.ProductsPictures" StoreEntitySet="Pictures">
-      <EndProperty Name="Products">
-        <ScalarProperty Name="Id" ColumnName="Product_Id" />
-      </EndProperty>
-      <EndProperty Name="Pictures">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="CategoriesStatus" TypeName="Model1.CategoriesStatus" StoreEntitySet="Status">
-      <EndProperty Name="Categories">
-        <ScalarProperty Name="Id" ColumnName="Category_Id" />
-      </EndProperty>
-      <EndProperty Name="Status">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="GalleriesStatus" TypeName="Model1.GalleriesStatus" StoreEntitySet="Status">
-      <EndProperty Name="Galleries">
-        <ScalarProperty Name="Id" ColumnName="Gallery_Id" />
-      </EndProperty>
-      <EndProperty Name="Status">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ClientsGalleries" TypeName="Model1.ClientsGalleries" StoreEntitySet="Galleries">
-      <EndProperty Name="Clients">
-        <ScalarProperty Name="Id" ColumnName="Client_Id" />
-      </EndProperty>
-      <EndProperty Name="Galleries">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ClientsPictures" TypeName="Model1.ClientsPictures" StoreEntitySet="Pictures">
-      <EndProperty Name="Clients">
-        <ScalarProperty Name="Id" ColumnName="Client_Id" />
-      </EndProperty>
-      <EndProperty Name="Pictures">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ClientsStatus" TypeName="Model1.ClientsStatus" StoreEntitySet="Status">
-      <EndProperty Name="Clients">
-        <ScalarProperty Name="Id" ColumnName="Client_Id" />
-      </EndProperty>
-      <EndProperty Name="Status">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="UsersStatus" TypeName="Model1.UsersStatus" StoreEntitySet="Status">
-      <EndProperty Name="Users">
-        <ScalarProperty Name="Id" ColumnName="User_Id" />
-      </EndProperty>
-      <EndProperty Name="Status">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="PicturesGalleries" TypeName="Model1.PicturesGalleries" StoreEntitySet="Galleries">
-      <EndProperty Name="Pictures">
-        <ScalarProperty Name="Id" ColumnName="Picture_Id" />
-      </EndProperty>
-      <EndProperty Name="Galleries">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-  </EntityContainerMapping>
-</Mapping></edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Model1" />
+        <Alias Key="Target" Value="Model1.Store" />
+        <EntityContainerMapping CdmEntityContainer="Model1Container1" StorageEntityContainer="Model1TargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -697,7 +372,6 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
-        <DesignerProperty Name="UseLegacyProvider" Value="False" />
       </DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->

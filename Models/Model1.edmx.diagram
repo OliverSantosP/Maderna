@@ -4,25 +4,29 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bbf59456d00e441585a1cb82482cf6ab" Name="Diagram1" ZoomLevel="86" >
-        <EntityTypeShape EntityType="Model1.Products" Width="1.5" PointX="0.625" PointY="0.5" />
-        <EntityTypeShape EntityType="Model1.Clients" Width="1.5" PointX="5.875" PointY="0.5" />
-        <EntityTypeShape EntityType="Model1.Status" Width="1.5" PointX="3.25" PointY="3.625" />
-        <EntityTypeShape EntityType="Model1.Galleries" Width="1.5" PointX="0.75" PointY="5.375" />
-        <EntityTypeShape EntityType="Model1.Pictures" Width="1.5" PointX="3.25" PointY="8" />
-        <EntityTypeShape EntityType="Model1.Categories" Width="1.5" PointX="3.25" PointY="0.5" />
-        <EntityTypeShape EntityType="Model1.Users" Width="1.5" PointX="6.125" PointY="6.25" />
-        <AssociationConnector Association="Model1.CategoriesProducts" />
-        <AssociationConnector Association="Model1.StatusProducts" />
-        <AssociationConnector Association="Model1.GalleriesProducts" />
-        <AssociationConnector Association="Model1.PicturesProducts" />
-        <AssociationConnector Association="Model1.GalleriesClients" />
+      <Diagram DiagramId="97862f674c924256ab16f39d0cee3c48" Name="Diagram1" ZoomLevel="81" >
+        <EntityTypeShape EntityType="Model1.Categories" Width="1.5" PointX="3" PointY="13.625" />
+        <EntityTypeShape EntityType="Model1.Clients" Width="1.5" PointX="5.25" PointY="7.375" />
+        <EntityTypeShape EntityType="Model1.Status" Width="1.5" PointX="0.75" PointY="9" />
+        <EntityTypeShape EntityType="Model1.Galleries" Width="1.5" PointX="3" PointY="6.25" />
+        <EntityTypeShape EntityType="Model1.Products" Width="1.5" PointX="5.375" PointY="12.375" />
+        <EntityTypeShape EntityType="Model1.Pictures" Width="1.5" PointX="8.25" PointY="7.625" />
+        <EntityTypeShape EntityType="Model1.Users" Width="1.5" PointX="3" PointY="20.25" />
+        <AssociationConnector Association="Model1.StatusCategories" />
         <AssociationConnector Association="Model1.StatusClients" />
         <AssociationConnector Association="Model1.PicturesClients" />
-        <AssociationConnector Association="Model1.UsersStatus" />
-        <AssociationConnector Association="Model1.StatusCategories" />
+        <AssociationConnector Association="Model1.StatusClients1" />
+        <AssociationConnector Association="Model1.CategoriesProducts" />
+        <AssociationConnector Association="Model1.GalleriesProducts" />
+        <AssociationConnector Association="Model1.PicturesProducts" />
+        <AssociationConnector Association="Model1.StatusProducts" />
         <AssociationConnector Association="Model1.GalleriesPictures" />
-        </Diagram>
+        <AssociationConnector Association="Model1.StatusPictures" />
+        <AssociationConnector Association="Model1.StatusUsers" />
+        <AssociationConnector Association="Model1.GalleriesClients" />
+        <AssociationConnector Association="Model1.StatusGalleries" />
+        <AssociationConnector Association="Model1.UsersProducts" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
