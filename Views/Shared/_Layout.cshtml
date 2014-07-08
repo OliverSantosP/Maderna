@@ -14,7 +14,16 @@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+        <div class="navbar-header">
+            <img src="~/Content/images/Marco_Top.png" />
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+    </div>
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
@@ -24,24 +33,22 @@
             </div>
 
             <div class="navbar-collapse collapse">
-                <img src="~/Content/images/Marco_Top.png" />
-            </div>
-            <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-
-                    <li>@Html.ActionLink("HOME", "Index", "Home")</li>
-                    <li>@Html.ActionLink("ABOUT", "About", "Home")</li>
-                    <li>@Html.ActionLink("PRODUCTS", "Products", "Home")</li>
-                    <li>@Html.ActionLink("CONTACT", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("HOME", "Index", "Home", new { @class = "menulink" })</li>
+                    <li>@Html.ActionLink("ABOUT", "About", "Home", new { @class = "menulink" })</li>
+                    <li>@Html.ActionLink("PRODUCTS", "Products", "Home", new { @class = "menulink" })</li>
+                    <li>@Html.ActionLink("CONTACT", "Contact", "Home", new { @class = "menulink" })</li>
                 </ul>
                 @*@Html.Partial("_LoginPartial")*@
             </div>
-        </div>
-    </div>
+
     <div class="container body-content">
-        @RenderBody()
+        <div class="row">
+            @RenderBody()
+        </div>
         <footer>
-            <p>© Copyright 2014 • MADERNA, S.A. Todos los derechos reservados | Síguenos en <img src="~/Content/Images/fb_icon.png" /><img src="~/Content/Images/tw_icon.png" /><img src="~/Content/Images/yt_icon.png" /></p>
+            <img src="~/Content/images/Marco_Bottom.png" />
+            <div class="grayfooter"><p>© Copyright 2014 • MADERNA, S.A. Todos los derechos reservados | Síguenos en <img src="~/Content/Images/fb_icon.png" /><img src="~/Content/Images/tw_icon.png" /><img src="~/Content/Images/yt_icon.png" /></p></div>
         </footer>
     </div>
 
