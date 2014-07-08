@@ -1,5 +1,6 @@
 ﻿using Microsoft.Owin;
 using Owin;
+using System.Data.Entity;
 
 [assembly: OwinStartupAttribute(typeof(Maderna.Startup))]
 namespace Maderna
@@ -10,5 +11,7 @@ namespace Maderna
         {
             ConfigureAuth(app);
         }
+
+
     }
 }

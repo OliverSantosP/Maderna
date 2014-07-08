@@ -13,5 +13,7 @@ namespace Maderna.Models
             : base("DefaultConnection")
         {
         }
+
+        public System.Data.Entity.DbSet<Maderna.Models.Products> Products { get; set; }
     }
 }
