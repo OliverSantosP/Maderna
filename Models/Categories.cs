@@ -15,7 +15,6 @@ namespace Maderna.Models
     
     public partial class Categories
     {
-
         public Categories()
         {
             this.Products = new HashSet<Products>();
@@ -29,13 +28,12 @@ namespace Maderna.Models
         public virtual Status Status1 { get; set; }
         public virtual ICollection<Products> Products { get; set; }
 
-
         public static List<Models.Categories> GetAll()
         {
             Maderna.Models.Model1Container1 db = new Maderna.Models.Model1Container1();
             List<Models.Categories> Categories = new List<Models.Categories>();
-            var Test = from c in db.Categories select c;
-            foreach (var item in Test)
+            var CategoryList = from c in db.Categories select c;
+            foreach (var item in CategoryList)
             {
                 Categories.Add(item);
             }

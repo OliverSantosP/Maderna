@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Maderna.Models;
+using System.Data.Entity;
 
 namespace Maderna.Controllers
 {
@@ -15,6 +16,7 @@ namespace Maderna.Controllers
         {
             return View();
         }
+
 
 
         //

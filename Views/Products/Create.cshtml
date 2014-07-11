@@ -35,12 +35,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Category, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @foreach (var item in Maderna.Models.Categories.GetAll())
-                {
-                    <b>@item.Name</b>
-                }
-                @Html.EditorFor(model => model.Category)
-                @Html.ValidationMessageFor(model => model.Category)
+                @Html.DropDownListFor(m => m.Category, new SelectList(Maderna.Models.Categories.GetAll(), "Id", "Name", Maderna.Models.Categories.GetAll().First()))
             </div>
         </div>
 

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/07/2014 11:52:15
+-- Date Created: 07/11/2014 15:08:53
 -- Generated from EDMX file: C:\Users\Oliver Santos\Documents\Visual Studio 2013\Projects\Maderna\Maderna\Models\Model1.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,74 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_StatusCategories]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Categories] DROP CONSTRAINT [FK_StatusCategories];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StatusClients]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Clients] DROP CONSTRAINT [FK_StatusClients];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PicturesClients]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Clients] DROP CONSTRAINT [FK_PicturesClients];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StatusClients1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Clients] DROP CONSTRAINT [FK_StatusClients1];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CategoriesProducts]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Products] DROP CONSTRAINT [FK_CategoriesProducts];
+GO
+IF OBJECT_ID(N'[dbo].[FK_GalleriesProducts]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Products] DROP CONSTRAINT [FK_GalleriesProducts];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PicturesProducts]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Products] DROP CONSTRAINT [FK_PicturesProducts];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StatusProducts]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Products] DROP CONSTRAINT [FK_StatusProducts];
+GO
+IF OBJECT_ID(N'[dbo].[FK_GalleriesPictures]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Pictures] DROP CONSTRAINT [FK_GalleriesPictures];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StatusPictures]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Pictures] DROP CONSTRAINT [FK_StatusPictures];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StatusUsers]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Users] DROP CONSTRAINT [FK_StatusUsers];
+GO
+IF OBJECT_ID(N'[dbo].[FK_GalleriesClients]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Clients] DROP CONSTRAINT [FK_GalleriesClients];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StatusGalleries]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Galleries] DROP CONSTRAINT [FK_StatusGalleries];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UsersProducts]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Products] DROP CONSTRAINT [FK_UsersProducts];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Categories]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Categories];
+GO
+IF OBJECT_ID(N'[dbo].[Clients]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Clients];
+GO
+IF OBJECT_ID(N'[dbo].[Status]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Status];
+GO
+IF OBJECT_ID(N'[dbo].[Galleries]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Galleries];
+GO
+IF OBJECT_ID(N'[dbo].[Products]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Products];
+GO
+IF OBJECT_ID(N'[dbo].[Pictures]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Pictures];
+GO
+IF OBJECT_ID(N'[dbo].[Users]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Users];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables

@@ -50,6 +50,8 @@ namespace Maderna.Controllers
         {
             if (ModelState.IsValid)
             {
+                products.DateCreated = System.DateTime.Now;
+                products.Status = 1;
                 db.Products.Add(products);
                 db.SaveChanges();
                 return RedirectToAction("Index");

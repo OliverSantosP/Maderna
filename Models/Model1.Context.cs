@@ -12,7 +12,6 @@ namespace Maderna.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Linq;
     
     public partial class Model1Container1 : DbContext
     {
@@ -33,6 +32,5 @@ namespace Maderna.Models
         public virtual DbSet<Products> Products { get; set; }
         public virtual DbSet<Pictures> Pictures { get; set; }
         public virtual DbSet<Users> Users { get; set; }
-
     }
 }
