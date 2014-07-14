@@ -9,36 +9,41 @@
 
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         @Html.ValidationSummary(true)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name)
-                @Html.ValidationMessageFor(model => model.Name)
+        <div class="row">
+            <div class="span6">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Name)
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <textarea class="span6" rows="3" placeholder="What's up?" required></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Category, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 left">
+                        @Html.DropDownListFor(m => m.Category, new SelectList(Maderna.Models.Categories.GetAll(), "Id", "Name", Maderna.Models.Categories.GetAll().First()))
+                    </div>
+                </div>
+            </div>
+            <div class="span6">
+                <form action="~/Products/SaveDropzoneJsUploadedFiles" class="dropzone" id="dropzoneJsForm"></form>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description)
-                @Html.ValidationMessageFor(model => model.Description)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Category, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(m => m.Category, new SelectList(Maderna.Models.Categories.GetAll(), "Id", "Name", Maderna.Models.Categories.GetAll().First()))
-            </div>
-        </div>
-
 
 
         <div class="form-group">
@@ -56,3 +61,10 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+
+
+
+
+
+

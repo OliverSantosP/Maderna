@@ -51,6 +51,8 @@ namespace Maderna.Controllers
             if (ModelState.IsValid)
             {
                 products.DateCreated = System.DateTime.Now;
+                Maderna.Models.Users User = new Maderna.Models.Users();
+                products.CreatedBy = 1;
                 products.Status = 1;
                 db.Products.Add(products);
                 db.SaveChanges();
@@ -124,6 +126,26 @@ namespace Maderna.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        /// <summary>
+        /// to Save DropzoneJs Uploaded Files
+        /// </summary>
+        public ActionResult SaveDropzoneJsUploadedFiles()
+        {
+            bool isSavedSuccessfully = false;
+
+            foreach (string fileName in Request.Files)
+            {
+                HttpPostedFileBase file = Request.Files[fileName];
+
+                //You can Save the file content here
+
+                isSavedSuccessfully = true;
+            }
+
+            return Json(new { Message = string.Empty });
+
         }
     }
 }

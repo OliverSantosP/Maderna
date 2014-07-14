@@ -3,9 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Maderna</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    
+
     <link rel="stylesheet" href="~/Content/css/owl.carousel.css">
 
     <!-- Default Theme -->
@@ -76,6 +78,28 @@
 
         });
     </script>
+    <script type="text/javascript">
+
+        Dropzone.options.dropzoneJsForm = {
+
+            //prevents Dropzone from uploading dropped files immediately
+            autoProcessQueue: false,
+
+            init: function () {
+                var submitButton = document.querySelector("#submit-all");
+                var myDropzone = this; //closure
+
+                submitButton.addEventListener("click", function () {
+
+                    //tell Dropzone to process all queued files
+                    myDropzone.processQueue();
+                });
+
+            }
+        };
+
+    </script>
+    @Scripts.Render("~/bundles/dropzone")
     @RenderSection("scripts", required: false)
 </body>
 </html>

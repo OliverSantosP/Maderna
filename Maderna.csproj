@@ -211,6 +211,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\basic.css" />
+    <Content Include="Content\css\dropzone.css" />
     <Content Include="Content\images\Back.png" />
     <Content Include="Content\images\Footer_Icons.png" />
     <Content Include="Content\images\Marco_Bottom.png" />
@@ -223,10 +225,14 @@
     <Content Include="Content\css\owl.carousel.css" />
     <Content Include="Content\css\owl.theme.css" />
     <Content Include="Content\css\owl.transitions.css" />
+    <Content Include="Content\images\spritemap%402x.png" />
+    <Content Include="Content\images\spritemap.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\spritemap%402x.png" />
+    <Content Include="images\spritemap.png" />
     <Content Include="Models\Model1.edmx.sql" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -249,7 +255,11 @@
     </Content>
     <Content Include="fonts\Avenir_LT_65_Medium.woff" />
     <Content Include="fonts\Avenir_LT_85_Heavy.woff" />
+    <Content Include="Content\css\stylus\basic.styl" />
+    <Content Include="Content\css\stylus\dropzone.styl" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\dropzone.js" />
+    <Content Include="Scripts\dropzone.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
