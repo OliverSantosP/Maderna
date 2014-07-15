@@ -21,6 +21,7 @@
 }
 .dropzone.dz-clickable * {
   cursor: default;
+  font-family: 'AvenirMedium';
 }
 .dropzone .dz-message {
   opacity: 1;
@@ -100,8 +101,8 @@
   height: 40px;
   font-size: 30px;
   text-align: center;
-  /*right: -10px;
-  top: -10px;*/
+  right: -10px;
+  top: -10px;
 }
 .dropzone .dz-preview .dz-success-mark,
 .dropzone-previews .dz-preview .dz-success-mark {
