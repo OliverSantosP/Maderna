@@ -2248,6 +2248,7 @@ textarea.input-lg {
     color: #333333;
     background-color: #ffffff;
     border-color: #cccccc;
+    font-family: 'AvenirMedium';
 }
 
     .btn-default:hover,
@@ -2258,6 +2259,7 @@ textarea.input-lg {
         color: #333333;
         background-color: #FAFAFA;
         border-color: #adadad;
+        font-family: 'AvenirMedium';
     }
 
     .btn-default:active,
@@ -3479,6 +3481,7 @@ IMG.center {
         line-height: 1.428571429;
         color: #333333;
         white-space: nowrap;
+        font-family: 'AvenirMedium';
     }
 
         .dropdown-menu > li > a:hover,
