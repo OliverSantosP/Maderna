@@ -12,43 +12,46 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
     <div class="form-horizontal">
         @Html.ValidationSummary(true)
 
         <div class="row">
-            <div class="span6">
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Name)
-                        @Html.ValidationMessageFor(model => model.Name)
-                    </div>
+            <div class="col-md-6">
+                <div class="col-md-2">
                 </div>
+                <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Name, new { @class = "control-label" })
+                            <br />
+                            @Html.EditorFor(model => model.Name)
+                            @Html.ValidationMessageFor(model => model.Name)
+                        </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        <textarea class="span6" rows="3" placeholder="What's up?" required></textarea>
-                    </div>
-                </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Description, new { @class = "control-label" })
+                            <br />
+                            <textarea class="form-control" rows="3" placeholder="What's up?" required></textarea>
+                        </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Category, new { @class = "control-label col-md-2" })
-                    <div class="col-md-10 left">
-                        @Html.DropDownListFor(m => m.Category, new SelectList(Maderna.Models.Categories.GetAll(), "Id", "Name", Maderna.Models.Categories.GetAll().First()))
-                    </div>
-                </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Category, new { @class = "control-label" })
+                            <br />
+                            @Html.DropDownListFor(m => m.Category, new SelectList(Maderna.Models.Categories.GetAll(), "Id", "Name", Maderna.Models.Categories.GetAll().First()), new { @class = "btn btn-default dropdown-toggle" })
+                        </div>
+
+</div>
             </div>
-            <div class="span6">
+            <form action="~/Products/SaveDropzoneJsUploadedFiles" class="dropzone" id="dropzoneJsForm"></form>
+            <div class="col-md-4">
                 <form action="~/Products/SaveDropzoneJsUploadedFiles" class="dropzone" id="dropzoneJsForm"></form>
             </div>
         </div>
 
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
             </div>
         </div>
     </div>

@@ -227,10 +227,10 @@
     <Content Include="Content\css\owl.transitions.css" />
     <Content Include="Content\images\spritemap%402x.png" />
     <Content Include="Content\images\spritemap.png" />
+    <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="images\spritemap%402x.png" />
     <Content Include="images\spritemap.png" />
     <Content Include="Models\Model1.edmx.sql" />
@@ -302,6 +302,7 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
