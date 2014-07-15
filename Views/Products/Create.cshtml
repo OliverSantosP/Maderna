@@ -36,7 +36,19 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Category, new { @class = "control-label" })
                         <br />
-                        @Html.DropDownListFor(m => m.Category, new SelectList(Maderna.Models.Categories.GetAll(), "Id", "Name", Maderna.Models.Categories.GetAll().First()), new { @class = "btn btn-default dropdown-toggle" })
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                Select one.
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                @foreach (var item in Maderna.Models.Categories.GetAll())
+                                {
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">@item.Name</a></li>
+                                }
+                            </ul>
+                        </div>
+
                     </div>
 
                 

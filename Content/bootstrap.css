@@ -2256,7 +2256,7 @@ textarea.input-lg {
     .btn-default.active,
     .open .dropdown-toggle.btn-default {
         color: #333333;
-        background-color: #ebebeb;
+        background-color: #FAFAFA;
         border-color: #adadad;
     }
 
@@ -3454,7 +3454,6 @@ IMG.center {
     background-color: #ffffff;
     border: 1px solid #cccccc;
     border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 4px;
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     background-clip: padding-box;
@@ -3486,7 +3485,7 @@ IMG.center {
         .dropdown-menu > li > a:focus {
             color: #ffffff;
             text-decoration: none;
-            background-color: #428bca;
+            background-color: #231F20;
         }
 
     .dropdown-menu > .active > a,
