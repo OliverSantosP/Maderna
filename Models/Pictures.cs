@@ -16,20 +16,18 @@ namespace Maderna.Models
     {
         public Pictures()
         {
-            this.Clients = new HashSet<Clients>();
             this.Products = new HashSet<Products>();
         }
     
         public int Id { get; set; }
-        public int Gallery { get; set; }
+        public int Product { get; set; }
         public string Path { get; set; }
-        public string DateCreated { get; set; }
-        public string LastUpdate { get; set; }
+        public System.DateTime DateCreated { get; set; }
+        public System.DateTime LastUpdate { get; set; }
         public int Status { get; set; }
     
-        public virtual ICollection<Clients> Clients { get; set; }
         public virtual ICollection<Products> Products { get; set; }
-        public virtual Galleries Gallery1 { get; set; }
+        public virtual Products Product1 { get; set; }
         public virtual Status Status1 { get; set; }
     }
 }

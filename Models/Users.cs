@@ -22,10 +22,9 @@ namespace Maderna.Models
         public int Id { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public System.DateTime LastLoginDate { get; set; }
         public int Status { get; set; }
     
-        public virtual Status Status1 { get; set; }
         public virtual ICollection<Products> Products { get; set; }
+        public virtual Status Status1 { get; set; }
     }
 }

@@ -25,12 +25,12 @@ namespace Maderna.Models
         public string Description { get; set; }
         public int Status { get; set; }
     
-        public virtual Status Status1 { get; set; }
         public virtual ICollection<Products> Products { get; set; }
+        public virtual Status Status1 { get; set; }
 
         public static List<Models.Categories> GetAll()
         {
-            Maderna.Models.Model1Container1 db = new Maderna.Models.Model1Container1();
+            Maderna.Models.Model2Container db = new Maderna.Models.Model2Container();
             List<Models.Categories> Categories = new List<Models.Categories>();
             var CategoryList = from c in db.Categories select c;
             foreach (var item in CategoryList)

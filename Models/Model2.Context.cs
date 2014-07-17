@@ -13,10 +13,10 @@ namespace Maderna.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Model1Container1 : DbContext
+    public partial class Model2Container : DbContext
     {
-        public Model1Container1()
-            : base("name=Model1Container1")
+        public Model2Container()
+            : base("name=Model2Container")
         {
         }
     
@@ -25,12 +25,10 @@ namespace Maderna.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Categories> Categories { get; set; }
-        public virtual DbSet<Clients> Clients { get; set; }
-        public virtual DbSet<Status> Status { get; set; }
-        public virtual DbSet<Galleries> Galleries { get; set; }
-        public virtual DbSet<Products> Products { get; set; }
         public virtual DbSet<Pictures> Pictures { get; set; }
+        public virtual DbSet<Status> Status { get; set; }
+        public virtual DbSet<Products> Products { get; set; }
+        public virtual DbSet<Categories> Categories { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }
 }

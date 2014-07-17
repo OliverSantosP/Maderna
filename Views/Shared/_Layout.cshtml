@@ -75,31 +75,11 @@
 
             });
 
+            
 
         });
     </script>
-    <script type="text/javascript">
-
-        Dropzone.options.dropzoneJsForm = {
-
-            //prevents Dropzone from uploading dropped files immediately
-            autoProcessQueue: false,
-            dictDefaultMessage:"",
-            init: function () {
-                var submitButton = document.querySelector("#submit-all");
-                var myDropzone = this; //closure
-
-                submitButton.addEventListener("click", function () {
-
-                    //tell Dropzone to process all queued files
-                    myDropzone.processQueue();
-                });
-
-            }
-        };
-
-    </script>
-    @Scripts.Render("~/bundles/dropzone")
+    
     @RenderSection("scripts", required: false)
 </body>
 </html>

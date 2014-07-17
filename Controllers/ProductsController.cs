@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -7,12 +7,13 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Maderna.Models;
+using System.IO;
 
 namespace Maderna.Controllers
 {
     public class ProductsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private Maderna.Models.Model2Container db = new Maderna.Models.Model2Container();
 
         // GET: /Products/
         public ActionResult Index()
@@ -46,7 +47,7 @@ namespace Maderna.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Name,Description,Category,Gallery,MainPicture,CreatedBy,DateCreated,LastUpdate,Status")] Products products)
+        public ActionResult Create([Bind(Include = "Id,Name,Description,Category,Gallery,MainPicture,CreatedBy,DateCreated,LastUpdate,Status")] Products products)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +83,7 @@ namespace Maderna.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Name,Description,Category,Gallery,MainPicture,CreatedBy,DateCreated,LastUpdate,Status")] Products products)
+        public ActionResult Edit([Bind(Include = "Id,Name,Description,Category,Gallery,MainPicture,CreatedBy,DateCreated,LastUpdate,Status")] Products products)
         {
             if (ModelState.IsValid)
             {
@@ -139,7 +140,18 @@ namespace Maderna.Controllers
             {
                 HttpPostedFileBase file = Request.Files[fileName];
 
-                //You can Save the file content here
+                var FileName = Path.GetFileName(file.FileName);
+                var FullPath = Path.Combine(Server.MapPath("~/Images/"), fileName);
+                file.SaveAs(FullPath);
+                Maderna.Models.Pictures Picture = new Maderna.Models.Pictures();
+                
+                Picture.DateCreated = System.DateTime.Now;
+                Picture.LastUpdate = System.DateTime.Now;
+                Picture.Path = FullPath;
+                Picture.Status = Status.ActiveStatus();
+                
+                db.Pictures.Add(Picture);
+                db.SaveChanges();
 
                 isSavedSuccessfully = true;
             }
