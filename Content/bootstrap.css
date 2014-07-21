@@ -376,7 +376,7 @@ textarea {
     }
 
 a {
-    color: #428bca;
+    color: #333;
     text-decoration: none;
 }
 
@@ -4033,7 +4033,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
             .nav > li > a:hover,
             .nav > li > a:focus {
                 text-decoration: none;
-                background-color: #eeeeee;
+                background-color: #ffffff;
             }
 
         .nav > li.disabled > a {
@@ -4409,10 +4409,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-brand {
-    float: left;
-    padding: 15px 15px;
-    font-size: 18px;
-    line-height: 20px;
+float: left;
+    text-align: center;
+    width: 100%;
 }
 
     .navbar-brand:hover,
