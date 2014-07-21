@@ -45,9 +45,7 @@
             </div>
 
     <div class="container body-content">
-        <div class="row">
             @RenderBody()
-        </div>
         <footer>
             <img src="~/Content/images/Marco_Bottom.png" />
             <div class="grayfooter"><p>© Copyright 2014 • MADERNA, S.A. Todos los derechos reservados | Síguenos en <img src="~/Content/Images/fb_icon.png" /><img src="~/Content/Images/tw_icon.png" /><img src="~/Content/Images/yt_icon.png" /></p></div>
@@ -61,18 +59,16 @@
         $(document).ready(function () {
 
             $("#owl-example").owlCarousel({
-
-                autoPlay: 6000, //Set AutoPlay to 3 seconds
-
-                items: 2,
-                itemsDesktop: [1024, 2],
-                itemsDesktopSmall: [600, 1],
-                pagination: false,
-                rewindNav: false,
-                paginationSpeed: 2000,
-                rewindNav: true,
-                rewindSpeed: 5000
-
+                items: 3,
+                center: true,
+                autoplayTimeout:1000,
+                autoplayHoverPause: true,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                loop: true,
+                mouseDrag: true,
+                touchDrag: true,
+                autoWidth: true,
             });
 
             

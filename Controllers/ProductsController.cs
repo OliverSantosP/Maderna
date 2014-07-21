@@ -49,6 +49,7 @@ namespace Maderna.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Description,Category,Gallery,MainPicture,CreatedBy,DateCreated,LastUpdate,Status")] Products products)
         {
+            SaveDropzoneJsUploadedFiles();
             if (ModelState.IsValid)
             {
                 products.DateCreated = System.DateTime.Now;
@@ -151,7 +152,7 @@ namespace Maderna.Controllers
                 Picture.Status = Status.ActiveStatus();
                 
                 db.Pictures.Add(Picture);
-                db.SaveChanges();
+                //db.SaveChanges();
 
                 isSavedSuccessfully = true;
             }
