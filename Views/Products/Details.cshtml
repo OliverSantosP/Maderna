@@ -5,79 +5,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>Products</h4>
-	<hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MainPicture)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MainPicture)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedBy)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreatedBy)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DateCreated)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DateCreated)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LastUpdate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LastUpdate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-
-    </dl>
+<div class="row">
+    <div class="col-md-12">
+        @*<div class="col-md-2"></div>*@
+        <div class="col-md-6">
+            <img src="~/Content/images/K.jpg" width="640"/>
+        </div>
+        <div class="col-md-6">
+            <div class="ProductTitle">
+                @Html.DisplayTextFor(model => model.Name)
+            </div>
+            <br />
+            <div class="ProductDescription">
+                @Html.DisplayTextFor(model => model.Description)
+            </div>
+        </div>
+        @*<div class="col-md-2"></div>*@
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
