@@ -344,7 +344,6 @@
           <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
           <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
           <ScalarProperty Name="Status" ColumnName="Status" />
-          
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

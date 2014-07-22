@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/17/2014 10:24:16
+-- Date Created: 07/22/2014 16:20:37
 -- Generated from EDMX file: C:\Users\Oliver Santos\Documents\Visual Studio 2013\Projects\Maderna\Maderna\Models\Model2.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,44 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_CategoriesProducts]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Products] DROP CONSTRAINT [FK_CategoriesProducts];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UsersProducts]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Products] DROP CONSTRAINT [FK_UsersProducts];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StatusProducts]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Products] DROP CONSTRAINT [FK_StatusProducts];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StatusUsers]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Users] DROP CONSTRAINT [FK_StatusUsers];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StatusPictures]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Pictures] DROP CONSTRAINT [FK_StatusPictures];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StatusCategories]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Categories] DROP CONSTRAINT [FK_StatusCategories];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Pictures]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Pictures];
+GO
+IF OBJECT_ID(N'[dbo].[Status]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Status];
+GO
+IF OBJECT_ID(N'[dbo].[Products]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Products];
+GO
+IF OBJECT_ID(N'[dbo].[Categories]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Categories];
+GO
+IF OBJECT_ID(N'[dbo].[Users]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Users];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -30,7 +63,7 @@ GO
 -- Creating table 'Pictures'
 CREATE TABLE [dbo].[Pictures] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Product] int  NOT NULL,
+    [Product] int  NULL,
     [Path] nvarchar(max)  NOT NULL,
     [DateCreated] datetime  NOT NULL,
     [LastUpdate] datetime  NOT NULL,
@@ -142,34 +175,6 @@ ADD CONSTRAINT [FK_UsersProducts]
 CREATE INDEX [IX_FK_UsersProducts]
 ON [dbo].[Products]
     ([Category]);
-GO
-
--- Creating foreign key on [MainPicture] in table 'Products'
-ALTER TABLE [dbo].[Products]
-ADD CONSTRAINT [FK_PicturesProducts]
-    FOREIGN KEY ([MainPicture])
-    REFERENCES [dbo].[Pictures]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_PicturesProducts'
-CREATE INDEX [IX_FK_PicturesProducts]
-ON [dbo].[Products]
-    ([MainPicture]);
-GO
-
--- Creating foreign key on [Product] in table 'Pictures'
-ALTER TABLE [dbo].[Pictures]
-ADD CONSTRAINT [FK_ProductsPictures]
-    FOREIGN KEY ([Product])
-    REFERENCES [dbo].[Products]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_ProductsPictures'
-CREATE INDEX [IX_FK_ProductsPictures]
-ON [dbo].[Pictures]
-    ([Product]);
 GO
 
 -- Creating foreign key on [Status] in table 'Products'
