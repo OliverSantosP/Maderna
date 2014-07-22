@@ -36,34 +36,33 @@
             </div><!--/.nav-collapse -->
         </div>
     </div>
-    
-        <div class="container body-content">
-            @RenderBody()
-            <footer>
-                <img src="~/Content/images/Marco_Bottom.png" />
-                <div class="row grayfooter">
-                    <div class="col-md-12">
-                        <div class="col-md-1"></div>
 
-                        <div class="col-md-2">
-                            © Copyright 2014
-                        </div>
+    <div class="container body-content">
+        @RenderBody()
+        <footer>
+            <img src="~/Content/images/Marco_Bottom.png" />
+            <div class="row grayfooter">
+                <div class="col-md-12">
+                    <div class="col-md-1"></div>
 
-                        <div class="col-md-2">
-                            MADERNA, S.A.
-                        </div>
-
-                        <div class="col-md-3">
-                            Todos los derechos reservados
-                            @*<div class="hidden-xs col-sm-3">|</div>*@
-                        </div>
-
-                        <div class="col-md-3">Síguenos en <img src="~/Content/Images/fb_icon.png" /><img src="~/Content/Images/tw_icon.png" /><img src="~/Content/Images/yt_icon.png" /></div>
-                        <div class="col-md-1"></div>
+                    <div class="col-md-2">
+                        © Copyright 2014
                     </div>
+
+                    <div class="col-md-2">
+                        MADERNA, S.A.
+                    </div>
+
+                    <div class="col-md-3">
+                        Todos los derechos reservados
+                    </div>
+
+                    <div class="col-md-3">Síguenos en <a href="http://www.google.com"><img src="~/Content/Images/fb_icon.png" /></a><a href="http://www.google.com"><img src="~/Content/Images/tw_icon.png" /></a><a href="http://www.google.com"><img src="~/Content/Images/yt_icon.png" /></a></div>
+                    <div class="col-md-1"></div>
                 </div>
-            </footer>
-</div>
+            </div>
+        </footer>
+    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

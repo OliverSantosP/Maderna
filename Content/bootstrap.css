@@ -341,9 +341,9 @@ footer {
     padding-bottom: 3px;
 }
 
-.grayfooter > p > img {
-    padding: 3px;
-}
+    .grayfooter > p > img {
+        padding: 3px;
+    }
 
 
 
@@ -2604,11 +2604,16 @@ IMG.center {
     font-family: 'Glyphicons Halflings';
     src: url('../fonts/glyphicons-halflings-regular.eot');
     src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
-    font-family: 'AvenirHeavy';
+}
+
+@font-face {
+    font-family: AvenirMedium;
     src: url('/fonts/Avenir_LT_65_Medium.woff') format('woff');
-    /*src: url('/fonts/Avenir_LT_85_Heavy.woff') format('woff');*/
-    font-family: 'AvenirMedium';
-    src: url('/fonts/Avenir_LT_65_Medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: AvenirHeavy;
+    src: url('/fonts/Avenir_LT_85_Heavy.woff') format('woff');
 }
 
 .glyphicon {
@@ -4290,7 +4295,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
     .navbar-header {
         text-align: center;
-        display:block;
+        display: block;
     }
 }
 
@@ -4411,7 +4416,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-brand {
-float: left;
+    float: left;
     text-align: center;
     width: 100%;
 }
@@ -4491,15 +4496,15 @@ float: left;
             }
 }
 
-.menulink{
-            float: none;
-        display: inline-block;
-        text-align: center;
-        font-family: 'AvenirMedium';
-        -webkit-font-smoothing: antialiased;
-        text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
-        color: #605f60;
-        letter-spacing: 0.310pc;
+.menulink {
+    float: none;
+    display: inline-block;
+    text-align: center;
+    font-family: 'AvenirHeavy';
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    color: #605f60;
+    letter-spacing: 0.310pc;
 }
 
 @media (min-width: 768px) {
@@ -4507,7 +4512,7 @@ float: left;
         float: none;
         display: inline-block;
         text-align: center;
-        font-family: 'AvenirMedium';
+        font-family: 'AvenirHeavy';
         -webkit-font-smoothing: antialiased;
         text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
         color: #605f60;
@@ -4764,7 +4769,7 @@ float: left;
     }
 
     .navbar-inverse .navbar-nav > li > a {
-        color: #000;
+        color: #8c8c8c;
     }
 
         .navbar-inverse .navbar-nav > li > a:hover,
