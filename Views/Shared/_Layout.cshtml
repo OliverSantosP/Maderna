@@ -6,7 +6,7 @@
     <title>@ViewBag.Title - Maderna</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    
+
 
     <link rel="stylesheet" href="~/Content/css/owl.carousel.css">
 
@@ -28,21 +28,42 @@
             </div>
             <div class="navbar-collapse collapse in">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("HOME", "Index", "Home", new { @class = "menulink" })</li>
-                    <li>@Html.ActionLink("ABOUT", "About", "Home", new { @class = "menulink" })</li>
-                    <li>@Html.ActionLink("PRODUCTS", "Products", "Home", new { @class = "menulink" })</li>
-                    <li>@Html.ActionLink("CONTACT", "Contact", "Home", new { @class = "menulink" })</li>
+                    <li><a class="menulink" href="/?Length=4">HOME</a></li>
+                    <li><a class="menulink" href="/?Length=4">ABOUT</a></li>
+                    <li><a class="menulink" href="/?Length=4">PRODUCTS</a></li>
+                    <li><a class="menulink" href="/?Length=4">CONTACT</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
     </div>
-    <div class="container body-content">
+    
+        <div class="container body-content">
             @RenderBody()
-        <footer>
-            <img src="~/Content/images/Marco_Bottom.png" />
-            <div class="grayfooter"><p>© Copyright 2014 • MADERNA, S.A. Todos los derechos reservados | Síguenos en <img src="~/Content/Images/fb_icon.png" /><img src="~/Content/Images/tw_icon.png" /><img src="~/Content/Images/yt_icon.png" /></p></div>
-        </footer>
-    </div>
+            <footer>
+                <img src="~/Content/images/Marco_Bottom.png" />
+                <div class="row grayfooter">
+                    <div class="col-md-12">
+                        <div class="col-md-1"></div>
+
+                        <div class="col-md-2">
+                            © Copyright 2014
+                        </div>
+
+                        <div class="col-md-2">
+                            MADERNA, S.A.
+                        </div>
+
+                        <div class="col-md-3">
+                            Todos los derechos reservados
+                            @*<div class="hidden-xs col-sm-3">|</div>*@
+                        </div>
+
+                        <div class="col-md-3">Síguenos en <img src="~/Content/Images/fb_icon.png" /><img src="~/Content/Images/tw_icon.png" /><img src="~/Content/Images/yt_icon.png" /></div>
+                        <div class="col-md-1"></div>
+                    </div>
+                </div>
+            </footer>
+</div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
@@ -53,7 +74,7 @@
             $("#owl-example").owlCarousel({
                 items: 3,
                 center: true,
-                autoplayTimeout:1000,
+                autoplayTimeout: 1000,
                 autoplayHoverPause: true,
                 autoplay: true,
                 autoplaySpeed: 4000,
@@ -63,11 +84,11 @@
                 autoWidth: true,
             });
 
-            
+
 
         });
     </script>
-    
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
