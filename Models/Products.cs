@@ -14,11 +14,6 @@ namespace Maderna.Models
     
     public partial class Products
     {
-        public Products()
-        {
-            this.Pictures = new HashSet<Pictures>();
-        }
-    
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -31,8 +26,6 @@ namespace Maderna.Models
     
         public virtual Categories Category1 { get; set; }
         public virtual Users User { get; set; }
-        public virtual Pictures Picture { get; set; }
-        public virtual ICollection<Pictures> Pictures { get; set; }
         public virtual Status Status1 { get; set; }
     }
 }

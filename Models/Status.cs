@@ -12,7 +12,7 @@ namespace Maderna.Models
     using System;
     using System.Collections.Generic;
     using System.Linq;
-
+    
     public partial class Status
     {
         public Status()

@@ -14,20 +14,13 @@ namespace Maderna.Models
     
     public partial class Pictures
     {
-        public Pictures()
-        {
-            this.Products = new HashSet<Products>();
-        }
-    
         public int Id { get; set; }
-        public int Product { get; set; }
+        public Nullable<int> Product { get; set; }
         public string Path { get; set; }
         public System.DateTime DateCreated { get; set; }
         public System.DateTime LastUpdate { get; set; }
         public int Status { get; set; }
     
-        public virtual ICollection<Products> Products { get; set; }
-        public virtual Products Product1 { get; set; }
         public virtual Status Status1 { get; set; }
     }
 }

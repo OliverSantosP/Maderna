@@ -19,14 +19,6 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="Products" EntitySet="Products" />
     </AssociationSet>
-    <AssociationSet Name="PicturesProducts" Association="Model2.Store.PicturesProducts">
-      <End Role="Pictures" EntitySet="Pictures" />
-      <End Role="Products" EntitySet="Products" />
-    </AssociationSet>
-    <AssociationSet Name="ProductsPictures" Association="Model2.Store.ProductsPictures">
-      <End Role="Products" EntitySet="Products" />
-      <End Role="Pictures" EntitySet="Pictures" />
-    </AssociationSet>
     <AssociationSet Name="StatusProducts" Association="Model2.Store.StatusProducts">
       <End Role="Status" EntitySet="Status" />
       <End Role="Products" EntitySet="Products" />
@@ -49,7 +41,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Product" Type="int" Nullable="false" />
+    <Property Name="Product" Type="int" Nullable="true" />
     <Property Name="Path" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DateCreated" Type="datetime" Nullable="false" />
     <Property Name="LastUpdate" Type="datetime" Nullable="false" />
@@ -119,30 +111,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="PicturesProducts">
-    <End Role="Pictures" Type="Model2.Store.Pictures" Multiplicity="1" />
-    <End Role="Products" Type="Model2.Store.Products" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Pictures">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Products">
-        <PropertyRef Name="MainPicture" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ProductsPictures">
-    <End Role="Products" Type="Model2.Store.Products" Multiplicity="1" />
-    <End Role="Pictures" Type="Model2.Store.Pictures" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Products">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Pictures">
-        <PropertyRef Name="Product" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="StatusProducts">
     <End Role="Status" Type="Model2.Store.Status" Multiplicity="1" />
     <End Role="Products" Type="Model2.Store.Products" Multiplicity="*" />
@@ -209,14 +177,6 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="PicturesProducts" Association="Model2.PicturesProducts">
-            <End Role="Pictures" EntitySet="Pictures" />
-            <End Role="Products" EntitySet="Products" />
-          </AssociationSet>
-          <AssociationSet Name="ProductsPictures" Association="Model2.ProductsPictures">
-            <End Role="Products" EntitySet="Products" />
-            <End Role="Pictures" EntitySet="Pictures" />
-          </AssociationSet>
           <AssociationSet Name="StatusProducts" Association="Model2.StatusProducts">
             <End Role="Status" EntitySet="Status" />
             <End Role="Products" EntitySet="Products" />
@@ -239,13 +199,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Product" Type="Int32" Nullable="false" />
+          <Property Name="Product" Type="Int32" Nullable="true" />
           <Property Name="Path" Type="String" Nullable="false" />
           <Property Name="DateCreated" Type="DateTime" Nullable="false" />
           <Property Name="LastUpdate" Type="DateTime" Nullable="false" />
           <Property Name="Status" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Products" Relationship="Model2.PicturesProducts" FromRole="Pictures" ToRole="Products" />
-          <NavigationProperty Name="Product1" Relationship="Model2.ProductsPictures" FromRole="Pictures" ToRole="Products" />
           <NavigationProperty Name="Status1" Relationship="Model2.StatusPictures" FromRole="Pictures" ToRole="Status" />
         </EntityType>
         <EntityType Name="Status">
@@ -275,8 +233,6 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Category1" Relationship="Model2.CategoriesProducts" FromRole="Products" ToRole="Categories" />
           <NavigationProperty Name="User" Relationship="Model2.UsersProducts" FromRole="Products" ToRole="Users" />
-          <NavigationProperty Name="Picture" Relationship="Model2.PicturesProducts" FromRole="Products" ToRole="Pictures" />
-          <NavigationProperty Name="Pictures" Relationship="Model2.ProductsPictures" FromRole="Products" ToRole="Pictures" />
           <NavigationProperty Name="Status1" Relationship="Model2.StatusProducts" FromRole="Products" ToRole="Status" />
         </EntityType>
         <EntityType Name="Categories">
@@ -322,30 +278,6 @@
             </Principal>
             <Dependent Role="Products">
               <PropertyRef Name="Category" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="PicturesProducts">
-          <End Type="Model2.Pictures" Role="Pictures" Multiplicity="1" />
-          <End Type="Model2.Products" Role="Products" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pictures">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Products">
-              <PropertyRef Name="MainPicture" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="ProductsPictures">
-          <End Type="Model2.Products" Role="Products" Multiplicity="1" />
-          <End Type="Model2.Pictures" Role="Pictures" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Products">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Pictures">
-              <PropertyRef Name="Product" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -412,6 +344,7 @@
           <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
           <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
           <ScalarProperty Name="Status" ColumnName="Status" />
+          
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

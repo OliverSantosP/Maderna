@@ -12,8 +12,6 @@
         <EntityTypeShape EntityType="Model2.Users" Width="1.5" PointX="4.5" PointY="8.875" />
         <AssociationConnector Association="Model2.CategoriesProducts" />
         <AssociationConnector Association="Model2.UsersProducts" />
-        <AssociationConnector Association="Model2.PicturesProducts" />
-        <AssociationConnector Association="Model2.ProductsPictures" />
         <AssociationConnector Association="Model2.StatusProducts" />
         <AssociationConnector Association="Model2.StatusUsers" />
         <AssociationConnector Association="Model2.StatusPictures" />
