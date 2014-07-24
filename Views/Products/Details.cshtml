@@ -7,9 +7,8 @@
 
 <div class="row">
     <div class="col-md-12">
-        @*<div class="col-md-2"></div>*@
         <div class="col-md-6">
-            <img src="~/Content/images/K.jpg" width="640"/>
+            <img src="~/Content/images/K.jpg" width="640" />
         </div>
         <div class="col-md-6">
             <div class="ProductTitle">
@@ -19,7 +18,14 @@
             <div class="ProductDescription">
                 @Html.DisplayTextFor(model => model.Description)
             </div>
+            <div class="row">
+                <div id="owl-example" class="owl-carousel">
+                    <img src="~/Content/images/K.jpg" height="200" />
+                    <img src="~/Content/images/D.jpg" height="200" />
+                    <img src="~/Content/images/T.jpg" height="200" />
+                </div>
+
+                </div>
+            </div>
         </div>
-        @*<div class="col-md-2"></div>*@
     </div>
-</div>
