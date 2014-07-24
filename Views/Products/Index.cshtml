@@ -4,73 +4,54 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Category)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MainPicture)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedBy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateCreated)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastUpdate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MainPicture)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedBy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateCreated)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastUpdate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
-</table>
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-2">
+            <div class="productthumb"><img src="~/Content/images/A.jpg" /></div>
+        </div>
+        <div class="col-md-2">
+            <div class="productthumb"><img src="~/Content/images/B.jpg" /></div>
+        </div>
+        <div class="col-md-2">
+            <div class="productthumb"><img src="~/Content/images/C.jpg" /></div>
+        </div>
+        <div class="col-md-2">
+            <div class="productthumb"><img src="~/Content/images/D.jpg" /></div>
+        </div>
+        <div class="col-md-2">
+            <div class="productthumb"><img src="~/Content/images/E.jpg" /></div>
+        </div>
+        <div class="col-md-2">
+            <div class="productthumb"><img src="~/Content/images/F.jpg" /></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-2">
+            <div class="productthumb"><img src="~/Content/images/G.jpg" />
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="productthumb">
+                <div class="productthumbtext">
+                    <p>Vikta</p>
+                    <p>Table</p>
+                    <p>103</p>
+                </div>
+<img src="~/Content/images/H.jpg" /></div>
+        </div>
+        <div class="col-md-2">
+            <div class="productthumb"><img src="~/Content/images/I.jpg" /></div>
+        </div>
+        <div class="col-md-2">
+            <div class="productthumb"><img src="~/Content/images/J.jpg" /></div>
+        </div>
+        <div class="col-md-2">
+            <div class="productthumb"><img src="~/Content/images/K.jpg" /></div>
+        </div>
+        <div class="col-md-2">
+            <div class="productthumb"><img src="~/Content/images/L.jpg" /></div>
+        </div>
+    </div>
+</div>
