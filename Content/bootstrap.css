@@ -335,22 +335,32 @@ footer {
 
 .ProductTitle {
     text-align: left;
-    font-family: 'AvenirHeavy';
-    font-weight: bold;
-    -webkit-font-smoothing: antialiased;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
-    font-size: 0.8em;
-    letter-spacing: 0.200pc;
-    text-transform: uppercase;
-}
-
-.ProductDescription {
-    padding-top: 10px;
-    text-align: left;
     font-family: 'AvenirMedium';
     -webkit-font-smoothing: antialiased;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    font-size: 1.3em;
+    letter-spacing: 0.200pc;
+    text-transform: uppercase;
+    color: #b7b7b7;
+    padding-top: 10%;
+}
+
+.ProductImage {
+    max-width: 400px;
+    float: right;
+    display: inline-block;
+}
+
+.ProductDescription {
+    text-align: justify;
+    font-family: 'AvenirBook';
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
     font-size: 0.8em;
+    color: #605f60;
+    float:left;
+    display: inline-block;
+    margin-right:30%;
 }
 
 .ProductThumb {
@@ -4598,15 +4608,15 @@ textarea.input-group-sm > .input-group-btn > .btn {
     font-size: 20px;
     font-family: "AvenirMedium";
     background-color: #605f60;
-    padding-top:45px;
-    padding-left:25px;
-    padding-right:25px;
-    
+    padding-top: 45px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .productthumbtext p {
     margin: 0px;
 }
+
 .ProductGrid {
     display: inline-block;
     width: 200px;
