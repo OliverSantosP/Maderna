@@ -28,13 +28,13 @@
             </div>
             <div class="navbar-collapse collapse in">
                 <ul class="nav navbar-nav">
-                    <li><a class="menulink" href="/Home">HOME</a></li>
+                    <li>@Html.ActionLink("HOME", "Index", "Home", null, new  {@class = "menulink" })</li>
                     <li><a class="menulinkbar">|</a></li>
-                    <li><a class="menulink" href="Home/About">ABOUT</a></li>
+                    <li>@Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "menulink" })</li>
                     <li><a class="menulinkbar">|</a></li>
-                    <li><a class="menulink" href="/Products">PRODUCTS</a></li>
+                    <li>@Html.ActionLink("PRODUCTS", "Index", "Products", null, new { @class = "menulink" })</li>
                     <li><a class="menulinkbar">|</a></li>
-                    <li><a class="menulink" href="/Contact">CONTACT</a></li>
+                    <li>@Html.ActionLink("CONTACTS", "Contact", "Home", null, new { @class = "menulink" })</li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
