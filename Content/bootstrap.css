@@ -368,6 +368,23 @@ footer {
     padding-top: 15px;
 }
 
+.row-centered {
+    text-align:center;
+
+}
+
+.col-fixed {
+width: 175px;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:center;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
 .grayfooter {
     margin-top: 50px;
     background-color: #f3f3f3;
