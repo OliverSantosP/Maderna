@@ -368,21 +368,25 @@ footer {
     padding-top: 15px;
 }
 
-.row-centered {
-    text-align: center;
-}
 
 .col-fixed {
     width: 175px;
 }
 
+[class*="col-"] {
+
+/*border: 1px solid #80aa00;
+background: #d6ec94;*/
+}
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
 .col-centered {
-    display: inline-block;
-    float: none;
-    /* reset the text-align */
-    text-align: center;
-    /* inline-block space fix */
-    margin-right: -4px;
+    display:inline-block;
+    float:none;
+    padding-right: 5px;
 }
 
 .grayfooter {
@@ -1237,7 +1241,7 @@ pre {
     .col-md-9,
     .col-md-10,
     .col-md-11 {
-        float: left;
+        float:left;
     }
 
     .col-md-1 {
