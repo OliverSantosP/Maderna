@@ -374,18 +374,18 @@ footer {
 }
 
 [class*="col-"] {
-
-/*border: 1px solid #80aa00;
+    /*border: 1px solid #80aa00;
 background: #d6ec94;*/
 }
 
 /* centered columns styles */
 .row-centered {
-    text-align:center;
+    text-align: center;
 }
+
 .col-centered {
-    display:inline-block;
-    float:none;
+    display: inline-block;
+    float: none;
     padding-right: 5px;
 }
 
@@ -1241,7 +1241,7 @@ pre {
     .col-md-9,
     .col-md-10,
     .col-md-11 {
-        float:left;
+        float: left;
     }
 
     .col-md-1 {
@@ -4578,7 +4578,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
     font-family: 'AvenirHeavy';
     -webkit-font-smoothing: antialiased;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
-    color: #605f60;
+    color: #b7b7b7;
+    padding-top: 13px;
+    margin-left: 10px;
 }
 
 .AboutText {
@@ -4913,7 +4915,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     }
 
     .navbar-inverse .navbar-nav > li > a {
-        color: #bbbbbb;
+        color: #b7b7b7;
     }
 
         .navbar-inverse .navbar-nav > li > a:hover,
