@@ -379,6 +379,10 @@ background: #d6ec94;*/
 }
 
 .row-centered {
+    text-align: center;;
+}
+
+.row-products-centered {
     text-align: center;
     margin-left: auto;
     max-width: 1200px;
