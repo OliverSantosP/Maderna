@@ -347,8 +347,6 @@ footer {
 
 .ProductImage {
     max-width: 400px;
-    float: right;
-    display: inline-block;
 }
 
 .ProductDescription {
@@ -358,14 +356,26 @@ footer {
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
     font-size: 0.8em;
     color: #605f60;
-    float: left;
-    display: inline-block;
-    margin-right: 30%;
+    max-width: 400px;
+    padding-top: 10px;
+}
+
+.ProductText {
+    padding-left: 20px;
+}
+
+.ProductTextBottom {
+    padding-bottom: 30%;
 }
 
 .ProductThumb {
-    margin-left: -15px;
     padding-top: 15px;
+    float:left;
+}
+
+.ProductThumb img{
+    
+    width:50px;
 }
 
 
@@ -373,13 +383,17 @@ footer {
     width: 175px;
 }
 
+.col-products-fixed {
+    width: 400px;
+}
+
 [class*="col-"] {
     /*border: 1px solid #80aa00;
-background: #d6ec94;*/
+    background: #d6ec94;*/
 }
 
 .row-centered {
-    text-align: center;;
+    text-align: center;
 }
 
 .row-products-centered {
@@ -393,6 +407,7 @@ background: #d6ec94;*/
     display: inline-block;
     float: none;
     padding-right: 5px;
+    vertical-align:middle;
 }
 
 

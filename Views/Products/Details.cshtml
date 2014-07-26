@@ -5,27 +5,33 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="col-md-6">
-            <img src="~/Content/images/K.jpg" class="ProductImage"/>
-        </div>
-        <div class="col-md-6">
+<div class="row row-centered">
+    <div class="col-centered col-products-fixed">
+        <img src="~/Content/images/K.jpg" id="ProductImage" class="ProductImage" />
+
+    </div>
+    <div class="col-centered">
+        <div class="ProductText">
             <div class="ProductTitle">
                 @Html.DisplayTextFor(model => model.Name)
             </div>
-            <br />
             <div class="ProductDescription">
                 @Html.DisplayTextFor(model => model.Description)
-            </div>
-            <div class="row">
-                <div id="owl-example" class="owl-carousel">
-                    <img src="~/Content/images/K.jpg" height="200" />
-                    <img src="~/Content/images/D.jpg" height="200" />
-                    <img src="~/Content/images/T.jpg" height="200" />
-                </div>
-
+                <div class="row">
+                    <div class="ProductThumb">
+                        <img src="~/Content/images/KS.jpg" onclick='changeImage("http://localhost:62357/Content/images/K.jpg");'>
+                        <img src="~/Content/images/BS.jpg" onclick='changeImage("http://localhost:62357/Content/images/B.jpg");'>
+                        <img src="~/Content/images/IS.jpg" onclick='changeImage("http://localhost:62357/Content/images/I.jpg");'>
+                    </div>
                 </div>
             </div>
+            <div class="ProductTextBottom hidden-sm hidden-xs"></div>
         </div>
     </div>
+</div>
+
+<script type="text/javascript">
+    function changeImage(a) {
+        document.getElementById("ProductImage").src = a;
+    }
+</script>
