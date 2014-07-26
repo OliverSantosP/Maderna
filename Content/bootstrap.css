@@ -358,9 +358,9 @@ footer {
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
     font-size: 0.8em;
     color: #605f60;
-    float:left;
+    float: left;
     display: inline-block;
-    margin-right:30%;
+    margin-right: 30%;
 }
 
 .ProductThumb {
@@ -369,20 +369,20 @@ footer {
 }
 
 .row-centered {
-    text-align:center;
-
+    text-align: center;
 }
 
 .col-fixed {
-width: 175px;
+    width: 175px;
 }
+
 .col-centered {
-    display:inline-block;
-    float:none;
+    display: inline-block;
+    float: none;
     /* reset the text-align */
-    text-align:center;
+    text-align: center;
     /* inline-block space fix */
-    margin-right:-4px;
+    margin-right: -4px;
 }
 
 .grayfooter {
@@ -4562,6 +4562,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
     color: #605f60;
     letter-spacing: 0.310pc;
+}
+
+.menulinkactive {
+    color: #428bca;
 }
 
 .menulinkbar {

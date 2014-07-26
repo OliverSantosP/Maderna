@@ -26,7 +26,7 @@
                 </button>
                 <a class="navbar-brand" href="#"><img src="~/Content/images/Marco_Top.png" /></a>
             </div>
-            <div class="navbar-collapse collapse in">
+            <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("HOME", "Index", "Home", null, new  {@class = "menulink" })</li>
                     <li><a class="menulinkbar">|</a></li>
@@ -86,9 +86,11 @@
                 autoWidth: true,
             });
 
-
-
+            if(location.pathname != "/") {
+                $('.menulink a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('menulinkactive');
+            } else $('.menulink a:eq(0)').addClass('menulinkactive');
         });
+
     </script>
 
     @RenderSection("scripts", required: false)
