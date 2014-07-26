@@ -29,11 +29,11 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("HOME", "Index", "Home", null, new  {@class = "menulink" })</li>
-                    <li><a class="menulinkbar">|</a></li>
+                    <li><a class="menulinkbar hidden-xs">|</a></li>
                     <li>@Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "menulink" })</li>
-                    <li><a class="menulinkbar">|</a></li>
+                    <li><a class="menulinkbar hidden-xs">|</a></li>
                     <li>@Html.ActionLink("PRODUCTS", "Index", "Products", null, new { @class = "menulink" })</li>
-                    <li><a class="menulinkbar">|</a></li>
+                    <li><a class="menulinkbar hidden-xs">|</a></li>
                     <li>@Html.ActionLink("CONTACTS", "Contact", "Home", null, new { @class = "menulink" })</li>
                 </ul>
             </div><!--/.nav-collapse -->
@@ -44,24 +44,23 @@
         @RenderBody()
         <footer>
             <img src="~/Content/images/Marco_Bottom.png" />
-            <div class="row grayfooter">
-                <div class="col-md-12">
-                    <div class="col-md-1"></div>
+            <div class="row row-centered grayfooter ">
+                <div class="col-md-12 col-centered">
 
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-centered">
                         © Copyright 2014
                     </div>
 
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-centered">
                         MADERNA, S.A.
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-centered">
                         Todos los derechos reservados
                     </div>
 
-                    <div class="col-md-3">Síguenos en <a href="http://www.google.com"><img src="~/Content/Images/fb_icon.png" /></a><a href="http://www.google.com"><img src="~/Content/Images/tw_icon.png" /></a><a href="http://www.google.com"><img src="~/Content/Images/yt_icon.png" /></a></div>
-                    <div class="col-md-1"></div>
+                    <div class="col-md-3 col-centered">Síguenos en <a href="http://www.google.com"><img src="~/Content/Images/fb_icon.png" /></a><a href="http://www.google.com"><img src="~/Content/Images/tw_icon.png" /></a><a href="http://www.google.com"><img src="~/Content/Images/yt_icon.png" /></a></div>
+
                 </div>
             </div>
         </footer>

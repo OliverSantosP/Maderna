@@ -589,6 +589,8 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
       .one($.support.transition.end, $.proxy(complete, this))
       .emulateTransitionEnd(350)
       [dimension](this.$element[0][scrollSize])
+
+    
   }
 
   Collapse.prototype.hide = function () {
