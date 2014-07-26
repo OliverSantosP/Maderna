@@ -378,9 +378,11 @@ footer {
 background: #d6ec94;*/
 }
 
-/* centered columns styles */
 .row-centered {
     text-align: center;
+    margin-left: auto;
+    max-width: 1200px;
+    margin-right: auto;
 }
 
 .col-centered {
@@ -388,6 +390,7 @@ background: #d6ec94;*/
     float: none;
     padding-right: 5px;
 }
+
 
 .grayfooter {
     margin-top: 50px;
@@ -4303,7 +4306,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
     position: relative;
     z-index: 1000;
     min-height: 50px;
-    margin-bottom: 20px;
     border: 1px solid transparent;
 }
 
