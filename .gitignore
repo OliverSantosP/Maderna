@@ -16,6 +16,8 @@ bld/
 [Bb]in/
 [Oo]bj/
 
+packages*/
+
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
@@ -185,7 +187,8 @@ FakesAssemblies/
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
+Icon
+
 
 # Thumbnails
 ._*
