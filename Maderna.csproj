@@ -251,6 +251,8 @@
       <LastGenOutput>Model2.cs</LastGenOutput>
       <DependentUpon>Model2.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\maderna - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\maderna - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dropzone.js" />
     <Content Include="Scripts\dropzone.min.js" />
