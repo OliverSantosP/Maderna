@@ -333,6 +333,16 @@ footer {
     letter-spacing: 0.200pc;
 }
 
+.ProductGrid {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    border: 3px solid #c99;
+    background-position: center center;
+    background-size: cover;
+}
+
 .ProductTitle {
     text-align: left;
     font-family: 'AvenirMedium';
@@ -370,13 +380,12 @@ footer {
 
 .ProductThumb {
     padding-top: 15px;
-    float:left;
+    float: left;
 }
 
-.ProductThumb img{
-    
-    width:50px;
-}
+    .ProductThumb img {
+        width: 50px;
+    }
 
 
 .col-fixed {
@@ -407,7 +416,7 @@ footer {
     display: inline-block;
     float: none;
     padding-right: 5px;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
 
@@ -4626,53 +4635,61 @@ textarea.input-group-sm > .input-group-btn > .btn {
     max-height: 100%;
 }
 
-.productthumb {
-    display: block;
-    overflow: hidden;
+
+
+/*#mainwrapper {  
+  font: 10pt normal Arial, sans-serif;  
+  height: auto;  
+  margin: 80px auto 0 auto;  
+  text-align: center;  
+  width: 660px;  
+}*/
+.box {
     height: 175px;
+    float: left;
+    position: relative;
+    overflow: hidden;
     width: 175px;
 }
 
-    .productthumb img {
-        display: block; /* Otherwise it keeps some space around baseline */
-        min-width: 100%; /* Scale up to fill container width */
-        min-height: 100%; /* Scale up to fill container height */
-        -ms-interpolation-mode: bicubic; /* Scaled images look a bit better in IE now */
+    .box img {
+        position: absolute;
+        left: 0;
+        -webkit-transition: all 300ms ease-out;
+        -moz-transition: all 300ms ease-out;
+        -o-transition: all 300ms ease-out;
+        -ms-transition: all 300ms ease-out;
+        transition: all 300ms ease-out;
     }
 
-.productthumbtext {
-    width: 175px;
-    height: 175px;
-    background: #FFF;
-    opacity: 0;
-    text-transform: uppercase;
-}
+    .box .caption {
+        background-color: #605f60;
+        position: absolute;
+        color: #b7b7b7;
+        font-family: 'AvenirBook';
+        text-transform: uppercase;
+        z-index: 100;
+        -webkit-transition: all 300ms ease-out;
+        -moz-transition: all 300ms ease-out;
+        -o-transition: all 300ms ease-out;
+        -ms-transition: all 300ms ease-out;
+        transition: all 300ms ease-out;
+        left: 0;
+        font-size: 1.1em;
+        padding:43.75px;
+    }
 
-.productthumb:hover .productthumbtext {
-    opacity: 1;
-    text-align: left;
-    color: #b7b7b7;
-    font-size: 20px;
-    font-family: "AvenirMedium";
-    background-color: #605f60;
-    padding-top: 45px;
-    padding-left: 25px;
-    padding-right: 25px;
-}
+    .box .fade-caption, #mainwrapper .box .scale-caption {
+        opacity: 0;
+        width: 175px;
+        height: 175px;
+        text-align: left;
+    }
 
-.productthumbtext p {
-    margin: 0px;
-}
+    .box:hover .fade-caption {
+        opacity: 0.9;
+    }
 
-.ProductGrid {
-    display: inline-block;
-    width: 200px;
-    height: 200px;
-    margin: 5px;
-    border: 3px solid #c99;
-    background-position: center center;
-    background-size: cover;
-}
 
 @media (min-width: 768px) {
     .navbar-nav {

@@ -72,7 +72,9 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
-            $("#owl-example").owlCarousel({
+            var owl = $("#products-carousel");
+
+            owl.owlCarousel({
                 items: 3,
                 center: true,
                 autoplayTimeout: 1000,
@@ -83,6 +85,7 @@
                 mouseDrag: true,
                 touchDrag: true,
                 autoWidth: true,
+                nav: true
             });
 
             if(location.pathname != "/") {
