@@ -416,7 +416,6 @@ footer {
     display: inline-block;
     float: none;
     padding-right: 5px;
-    vertical-align: middle;
 }
 
 
@@ -4637,19 +4636,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 
 
-/*#mainwrapper {  
-  font: 10pt normal Arial, sans-serif;  
-  height: auto;  
-  margin: 80px auto 0 auto;  
-  text-align: center;  
-  width: 660px;  
-}*/
+
 .box {
     height: 175px;
     float: left;
     position: relative;
     width: 175px;
-    margin-top: -4px;
 }
 
     .box img {
@@ -4668,6 +4660,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
         color: #b7b7b7;
         font-family: 'AvenirBook';
         text-transform: uppercase;
+        -webkit-font-smoothing: antialiased;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
         z-index: 100;
         -webkit-transition: all 300ms ease-out;
         -moz-transition: all 300ms ease-out;
@@ -4677,7 +4671,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
         left: 0;
         font-size: 1.1em;
         padding: 43.75px;
-        margin: 2px;
+        margin-top: 2px;
+        margin-left: 2px;
     }
 
     .box .fade-caption, #mainwrapper .box .scale-caption {
