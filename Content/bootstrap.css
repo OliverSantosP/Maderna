@@ -4648,8 +4648,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
     height: 175px;
     float: left;
     position: relative;
-    overflow: hidden;
     width: 175px;
+    margin-top: -4px;
 }
 
     .box img {
@@ -4676,7 +4676,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
         transition: all 300ms ease-out;
         left: 0;
         font-size: 1.1em;
-        padding:43.75px;
+        padding: 43.75px;
+        margin: 2px;
     }
 
     .box .fade-caption, #mainwrapper .box .scale-caption {
