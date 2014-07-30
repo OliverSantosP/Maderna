@@ -15,35 +15,43 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"><img src="~/Content/images/Marco_Top.png" /></a>
+    <div id="wrap">
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="~/Content/images/Marco_Top.png" /></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("HOME", "Index", "Home", null, new { @class = "menulink" })</li>
+                        <li><div class="menulinkbar hidden-xs">|</div></li>
+                        <li>@Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "menulink" })</li>
+                        <li><div class="menulinkbar hidden-xs">|</div></li>
+                        <li>@Html.ActionLink("PRODUCTS", "Index", "Products", null, new { @class = "menulink" })</li>
+                        <li><div class="menulinkbar hidden-xs">|</div></li>
+                        <li>@Html.ActionLink("CONTACTS", "Contact", "Home", null, new { @class = "menulink" })</li>
+                    </ul>
+                </div><!--/.nav-collapse -->
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("HOME", "Index", "Home", null, new  {@class = "menulink" })</li>
-                    <li><div class="menulinkbar hidden-xs">|</div></li>
-                    <li>@Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "menulink" })</li>
-                    <li><div class="menulinkbar hidden-xs">|</div></li>
-                    <li>@Html.ActionLink("PRODUCTS", "Index", "Products", null, new { @class = "menulink" })</li>
-                    <li><div class="menulinkbar hidden-xs">|</div></li>
-                    <li>@Html.ActionLink("CONTACTS", "Contact", "Home", null, new { @class = "menulink" })</li>
-                </ul>
-            </div><!--/.nav-collapse -->
         </div>
+        <div class="container body-content">
+            @RenderBody()
+            <div class="navbar-header">
+                <img src="~/Content/images/Marco_Bottom.png" class="LogoBottom" />
+            </div>
+        </div>
+        <div id="push"></div>
     </div>
 
-    <div class="container body-content">
-        @RenderBody()
-        <footer>
-            <img src="~/Content/images/Marco_Bottom.png" />
+
+    <div id="footer">
+        <div class="footer">
             <div class="row-centered grayfooter">
                 <div class="col-centered">
 
@@ -63,8 +71,9 @@
 
                 </div>
             </div>
-        </footer>
+        </div>
     </div>
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
@@ -88,13 +97,13 @@
                 nav: true
             });
 
-            if(location.pathname != "/") {
+            if (location.pathname != "/") {
                 $('.menulink a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('menulinkactive');
             } else $('.menulink a:eq(0)').addClass('menulinkactive');
         });
 
     </script>
-
     @RenderSection("scripts", required: false)
 </body>
+
 </html>
