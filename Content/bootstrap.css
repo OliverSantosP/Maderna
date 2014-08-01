@@ -4652,8 +4652,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
     -webkit-font-smoothing: antialiased;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
     color: #605f60;
-    padding-left:20px;
-    padding-right:20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .AboutLogo {
@@ -4668,13 +4668,47 @@ textarea.input-group-sm > .input-group-btn > .btn {
     max-height: 100%;
 }
 
-.LogoBottom {
-    padding-top: 20px;
+.ContactText {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    float: none;
+    font-family: 'AvenirBook';
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.OwlNav
-{
+.ContactTitle {
+    text-transform: uppercase;
+    color: #b7b7b7;
+    letter-spacing: 0.170pc;
+}
 
+.ContactEmail {
+    color: #605f60;
+    font-size: 2em;
+    margin-top: -15px;
+}
+
+.ContactPhone {
+    font-weight: bold;
+    color: #605f60;
+    font-size: 3.1em;
+}
+
+.ContactAddress {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.9em;
+    max-width: 300px;
+}
+
+
+.LogoBottom {
+    padding-top: 20px;
 }
 
 
