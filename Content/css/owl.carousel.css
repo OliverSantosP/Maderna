@@ -79,8 +79,6 @@
   /* fix for flashing background */
   -webkit-transform: translate3d(0px, 0px, 0px);
 }
-.owl-carousel .owl-controls .owl-nav .owl-prev,
-.owl-carousel .owl-controls .owl-nav .owl-next,
 .owl-carousel .owl-controls .owl-dot {
   cursor: pointer;
   cursor: hand;
@@ -90,6 +88,21 @@
   -ms-user-select: none;
   user-select: none;
 }
+
+.owl-carousel .owl-controls .owl-nav .owl-prev{
+
+}
+
+.owl-carousel .owl-controls .owl-nav .owl-next{
+
+}
+
+.owl-carousel .owl-controls .owl-nav .owl-next .right {
+    float: right;
+    width: 300px;
+    background-color: #b0e0e6;
+}
+
 .owl-carousel.owl-loaded {
   display: block;
 }

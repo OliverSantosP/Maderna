@@ -85,7 +85,7 @@ body {
     height: auto !important;
     height: 100%;
     /* Negative indent footer by it's height */
-    margin: 0 auto -85px;
+    margin: 0 auto -80px;
 }
 
 /* Set the fixed height of the footer here */
@@ -93,6 +93,8 @@ body {
 #footer {
     height: 70px;
 }
+
+
 
 a:focus {
     outline: thin dotted;
@@ -4709,7 +4711,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
         -ms-transition: all 300ms ease-out;
         transition: all 300ms ease-out;
         left: 0;
-        font-size: 1.1em;
+        font-size: 1.4em;
         padding: 43.75px;
         margin-top: 2px;
         margin-left: 2px;
