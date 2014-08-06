@@ -3,15 +3,40 @@
 }
 
 
-    <div id="products-carousel" class="owl-carousel">
-        <div>
-            <img src="~/Content/images/Pictures-1.jpg" />
-        </div>
-        <div>
-            <img src="~/Content/images/Pictures-2.jpg" />
-        </div>
-        <div>
-            <img src="~/Content/images/Pictures-3.jpg" />
-        </div>
-    </div>
+@Styles.Render("~/bundles/carousel")
 
+<div id="products-carousel" class="owl-carousel">
+    <div>
+        <img src="~/Content/images/Pictures-1.jpg" />
+    </div>
+    <div>
+        <img src="~/Content/images/Pictures-2.jpg" />
+    </div>
+    <div>
+        <img src="~/Content/images/Pictures-3.jpg" />
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/carousel")
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var owl = $("#products-carousel");
+
+        owl.owlCarousel({
+            items: 3,
+            center: true,
+            autoplayTimeout: 1000,
+            autoplayHoverPause: true,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            loop: true,
+            mouseDrag: true,
+            touchDrag: true,
+            autoWidth: true,
+            nav: true
+        });
+    });
+
+</script>

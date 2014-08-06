@@ -1,22 +1,18 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Maderna</title>
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
-
-    <link rel="stylesheet" href="~/Content/css/owl.carousel.css">
-
-    <!-- Default Theme -->
-    <link rel="stylesheet" href="~/Content/css/owl.theme.css">
-
+    @Styles.Render("~/bundles/carousel")
 </head>
+
 <body>
     <div id="wrap">
-
         <div class="navbar navbar-inverse" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -109,7 +105,6 @@
         <div id="push"></div>
     </div>
 
-
     <div id="footer">
         <div class="footer">
             <div class="row-centered gray-footer">
@@ -122,43 +117,19 @@
                     <div class="col-centered">
                         MADERNA, S.A.
                     </div>
-
                     <div class="col-centered">
                         Todos los derechos reservados
                     </div>
                     <div class="col-centered"><div class="hidden-xs hidden-sm">|</div></div>
                     <div class="col-centered">Síguenos en <a href="http://www.facebook.com"><img src="~/Content/Images/fb_icon.png" /></a><a href="http://www.twitter.com"><img src="~/Content/Images/tw_icon.png" /></a><a href="http://www.youtube.com"><img src="~/Content/Images/yt_icon.png" /></a></div>
-
                 </div>
             </div>
         </div>
     </div>
 
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    <script src="~/Scripts/owl.carousel.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-            var owl = $("#products-carousel");
-
-            owl.owlCarousel({
-                items: 3,
-                center: true,
-                autoplayTimeout: 1000,
-                autoplayHoverPause: true,
-                autoplay: true,
-                autoplaySpeed: 4000,
-                loop: true,
-                mouseDrag: true,
-                touchDrag: true,
-                autoWidth: true,
-                nav:true
-            });
-        });
-
-    </script>
+    @Scripts.Render("~/bundles/carousel")
     @RenderSection("scripts", required: false)
 </body>
 

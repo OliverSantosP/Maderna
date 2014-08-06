@@ -27,10 +27,15 @@ namespace Maderna
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                        "~/Content/css/basic.css",
-                       "~/Content/css/dropzone.css"));
+                       "~/Content/css/dropzone.css",
+                       "~/Content/css/owl.carousel.css",
+                       "~/Content/css/owl.theme.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/dropzone").Include(
                         "~/Scripts/dropzone.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/carousel").Include(
+            "~/Scripts/owl.carousel.js"));
         }
     }
 }
