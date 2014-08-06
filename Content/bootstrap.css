@@ -360,7 +360,7 @@ table {
 
 
 
-.ProductGrid {
+.product-grid {
     display: inline-block;
     width: 200px;
     height: 200px;
@@ -370,7 +370,7 @@ table {
     background-size: cover;
 }
 
-.ProductTitle {
+.product-title {
     text-align: left;
     font-family: 'AvenirMedium';
     -webkit-font-smoothing: antialiased;
@@ -382,11 +382,11 @@ table {
     padding-top: 10px;
 }
 
-.ProductImage {
+.product-image {
     max-width: 400px;
 }
 
-.ProductDescription {
+.product-description {
     text-align: justify;
     font-family: 'AvenirBook';
     -webkit-font-smoothing: antialiased;
@@ -397,20 +397,20 @@ table {
     padding-top: 10px;
 }
 
-.ProductText {
+.product-text {
     padding-left: 20px;
 }
 
-.ProductTextBottom {
+.product-text-bottom {
     padding-bottom: 20%;
 }
 
-.ProductThumb {
+.product-thumb {
     padding-top: 15px;
     float: left;
 }
 
-    .ProductThumb img {
+    .product-thumb img {
         width: 50px;
     }
 
@@ -450,14 +450,14 @@ table {
     vertical-align: middle;
 }
 
-.grayfooter {
+.gray-footer {
     background-color: #f3f3f3;
     color: #8c8c8c;
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
-    .grayfooter > p > img {
+    .gray-footer > p > img {
         padding: 3px;
     }
 
@@ -4628,7 +4628,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     letter-spacing: 0.310pc;
 }
 
-.menulinkactive {
+.menulink-active {
     float: none;
     display: inline-block;
     text-align: center;
@@ -4639,7 +4639,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     letter-spacing: 0.310pc;
 }
 
-.menulinkbar {
+.menulink-bar {
     float: none;
     display: inline-block;
     text-align: center;
@@ -4651,7 +4651,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     margin-left: 10px;
 }
 
-.menulinkbaractive {
+.menulink-bar-active {
     float: none;
     display: inline-block;
     text-align: center;
@@ -4664,7 +4664,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 
-.AboutText {
+.about-text {
     float: none;
     display: inline-block;
     text-align: justify;
@@ -4676,7 +4676,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     padding-right: 20px;
 }
 
-.AboutLogo {
+.about-logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -4688,7 +4688,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     max-height: 100%;
 }
 
-.ContactText {
+.contact-text {
     padding-top: 10px;
     padding-bottom: 30px;
     float: none;
@@ -4700,25 +4700,25 @@ textarea.input-group-sm > .input-group-btn > .btn {
     margin-right: auto;
 }
 
-.ContactTitle {
+.contact-title {
     text-transform: uppercase;
     color: #b7b7b7;
     letter-spacing: 0.170pc;
 }
 
-.ContactEmail {
+.contact-email {
     color: #605f60;
     font-size: 2em;
     margin-top: -15px;
 }
 
-.ContactPhone {
+.contact-phone {
     font-weight: bold;
     color: #605f60;
     font-size: 3.1em;
 }
 
-.ContactAddress {
+.contact-address {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -4727,7 +4727,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 
-.LogoBottom {
+.logo-bottom {
     padding-top: 20px;
 }
 

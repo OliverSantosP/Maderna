@@ -54,7 +54,7 @@
 
                             if (ActiveLink == "Index")
                             {
-                                <li>@Html.ActionLink("HOME", "Index", "Home", null, new { @class = "menulinkactive" })</li>
+                                <li>@Html.ActionLink("HOME", "Index", "Home", null, new { @class = "menulink-active" })</li>
                             }
                             else
                             {
@@ -63,32 +63,32 @@
 
                             if (ActiveLink == "About")
                             {
-                                <li><div class="menulinkbaractive hidden-xs">|</div></li>
-                                <li>@Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "menulinkactive" })</li>
-                                <li><div class="menulinkbaractive hidden-xs">|</div></li>
+                                <li><div class="menulink-bar-active hidden-xs">|</div></li>
+                                <li>@Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "menulink-active" })</li>
+                                <li><div class="menulink-bar-active hidden-xs">|</div></li>
                                 <li>@Html.ActionLink("PRODUCTS", "Index", "Products", null, new { @class = "menulink" })</li>
-                                <li><div class="menulinkbar hidden-xs">|</div></li>
+                                <li><div class="menulink-bar hidden-xs">|</div></li>
                             }
                             if (ActiveLink == "Products")
                             {
-                                <li><div class="menulinkbar hidden-xs">|</div></li>
+                                <li><div class="menulink-bar hidden-xs">|</div></li>
                                 <li>@Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "menulink" })</li>
-                                <li><div class="menulinkbaractive hidden-xs">|</div></li>
-                                <li>@Html.ActionLink("PRODUCTS", "Index", "Products", null, new { @class = "menulinkactive" })</li>
-                                <li><div class="menulinkbaractive hidden-xs">|</div></li>
+                                <li><div class="menulink-bar-active hidden-xs">|</div></li>
+                                <li>@Html.ActionLink("PRODUCTS", "Index", "Products", null, new { @class = "menulink-active" })</li>
+                                <li><div class="menulink-bar-active hidden-xs">|</div></li>
                             }
                             if (ActiveLink != "About" && ActiveLink != "Products")
                             {
-                                <li><div class="menulinkbar hidden-xs">|</div></li>
+                                <li><div class="menulink-bar hidden-xs">|</div></li>
                                 <li>@Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "menulink" })</li>
-                                <li><div class="menulinkbar hidden-xs">|</div></li>
+                                <li><div class="menulink-bar hidden-xs">|</div></li>
                                 <li>@Html.ActionLink("PRODUCTS", "Index", "Products", null, new { @class = "menulink" })</li>
-                                <li><div class="menulinkbar hidden-xs">|</div></li>
+                                <li><div class="menulink-bar hidden-xs">|</div></li>
                             }
 
                             if (ActiveLink == "Contact")
                             {
-                                <li>@Html.ActionLink("CONTACTS", "Contact", "Home", null, new { @class = "menulinkactive" })</li>
+                                <li>@Html.ActionLink("CONTACTS", "Contact", "Home", null, new { @class = "menulink-active" })</li>
                             }
                             else
                             {
@@ -103,7 +103,7 @@
         <div class="container body-content">
             @RenderBody()
             <div class="navbar-header">
-                <img src="~/Content/images/Marco_Bottom.png" class="LogoBottom" />
+                <img src="~/Content/images/Marco_Bottom.png" class="logo-bottom" />
             </div>
         </div>
         <div id="push"></div>
@@ -112,7 +112,7 @@
 
     <div id="footer">
         <div class="footer">
-            <div class="row-centered grayfooter">
+            <div class="row-centered gray-footer">
                 <div class="col-centered">
 
                     <div class="col-centered">
@@ -158,8 +158,8 @@
             });
 
             if (location.pathname != "/") {
-                $('.menulink a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('menulinkactive');
-            } else $('.menulink a:eq(0)').addClass('menulinkactive');
+                $('.menulink a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('menulink-active');
+            } else $('.menulink a:eq(0)').addClass('menulink-active');
         });
 
     </script>

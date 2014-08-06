@@ -7,17 +7,17 @@
 
 <div class="row row-centered">
     <div class="col-centered col-products-fixed">
-        <img src="~/Content/images/Product-1-Big.jpg" id="ProductImage" class="ProductImage" />
+        <img src="~/Content/images/Product-1-Big.jpg" id="product-image" class="product-image" />
     </div>
     <div class="col-centered-middle">
-        <div class="ProductText">
-            <div class="ProductTitle">
+        <div class="product-text">
+            <div class="product-title">
                 @Html.DisplayTextFor(model => model.Name)
             </div>
-            <div class="ProductDescription">
+            <div class="product-description">
                 @Html.DisplayTextFor(model => model.Description)
                 <div class="row">
-                    <div class="ProductThumb">
+                    <div class="product-thumb">
                         <img src="/Content/images/Supersmall-Thum1.jpg" onclick='changeImage("/Content/images/Product-1-Big.jpg");'/>
                         <img src="/Content/images/Supersmall-Thum2.jpg" onclick='changeImage("/Content/images/Product-2-Big.jpg");'>
                         <img src="/Content/images/Supersmall-Thum3.jpg" onclick='changeImage("/Content/images/Product-3-Big.jpg");'>
@@ -25,13 +25,13 @@
                     </div>
                 </div>
             </div>
-            <div class="ProductTextBottom hidden-sm hidden-xs"></div>
+            <div class="product-text-bottom hidden-sm hidden-xs"></div>
         </div>
     </div>
 </div>
 
 <script type="text/javascript">
     function changeImage(a) {
-        document.getElementById("ProductImage").src = a;
+        document.getElementById("product-image").src = a;
     }
 </script>
