@@ -18,12 +18,14 @@ namespace Maderna.Controllers
         // GET: /Products/
         public ActionResult Index()
         {
+            ViewBag.ActivePage = "Products";
             return View(db.Products.ToList());
         }
 
         // GET: /Products/Details/5
         public ActionResult Details(int? id)
         {
+            ViewBag.ActivePage = "Products";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -39,6 +41,7 @@ namespace Maderna.Controllers
         // GET: /Products/Create
         public ActionResult Create()
         {
+            ViewBag.ActivePage = "Products";
             return View();
         }
 
@@ -49,6 +52,7 @@ namespace Maderna.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Description,Category,Gallery,MainPicture,CreatedBy,DateCreated,LastUpdate,Status")] Products products)
         {
+            ViewBag.ActivePage = "Products";
             SaveDropzoneJsUploadedFiles();
             if (ModelState.IsValid)
             {
@@ -67,6 +71,7 @@ namespace Maderna.Controllers
         // GET: /Products/Edit/5
         public ActionResult Edit(int? id)
         {
+            ViewBag.ActivePage = "Products";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -86,6 +91,7 @@ namespace Maderna.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Description,Category,Gallery,MainPicture,CreatedBy,DateCreated,LastUpdate,Status")] Products products)
         {
+            ViewBag.ActivePage = "Products";
             if (ModelState.IsValid)
             {
                 db.Entry(products).State = EntityState.Modified;

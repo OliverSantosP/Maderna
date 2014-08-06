@@ -16,6 +16,7 @@
 </head>
 <body>
     <div id="wrap">
+
         <div class="navbar navbar-inverse" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -29,13 +30,72 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("HOME", "Index", "Home", null, new { @class = "menulink" })</li>
-                        <li><div class="menulinkbar hidden-xs">|</div></li>
-                        <li>@Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "menulink" })</li>
-                        <li><div class="menulinkbar hidden-xs">|</div></li>
-                        <li>@Html.ActionLink("PRODUCTS", "Index", "Products", null, new { @class = "menulink" })</li>
-                        <li><div class="menulinkbar hidden-xs">|</div></li>
-                        <li>@Html.ActionLink("CONTACTS", "Contact", "Home", null, new { @class = "menulink" })</li>
+                        @{
+                            string ActiveLink = "";
+                            if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Home")
+                            {
+                                if (HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString() == "Index")
+                                {
+                                    ActiveLink = "Index";
+                                }
+                                if (HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString() == "About")
+                                {
+                                    ActiveLink = "About";
+                                }
+                                if (HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString() == "Contact")
+                                {
+                                    ActiveLink = "Contact";
+                                }
+                            }
+                            if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Products")
+                            {
+                                ActiveLink = "Products";
+                            }
+
+                            if (ActiveLink == "Index")
+                            {
+                                <li>@Html.ActionLink("HOME", "Index", "Home", null, new { @class = "menulinkactive" })</li>
+                            }
+                            else
+                            {
+                                <li>@Html.ActionLink("HOME", "Index", "Home", null, new { @class = "menulink" })</li>
+                            }
+
+                            if (ActiveLink == "About")
+                            {
+                                <li><div class="menulinkbaractive hidden-xs">|</div></li>
+                                <li>@Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "menulinkactive" })</li>
+                                <li><div class="menulinkbaractive hidden-xs">|</div></li>
+                                <li>@Html.ActionLink("PRODUCTS", "Index", "Products", null, new { @class = "menulink" })</li>
+                                <li><div class="menulinkbar hidden-xs">|</div></li>
+                            }
+                            if (ActiveLink == "Products")
+                            {
+                                <li><div class="menulinkbar hidden-xs">|</div></li>
+                                <li>@Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "menulink" })</li>
+                                <li><div class="menulinkbaractive hidden-xs">|</div></li>
+                                <li>@Html.ActionLink("PRODUCTS", "Index", "Products", null, new { @class = "menulinkactive" })</li>
+                                <li><div class="menulinkbaractive hidden-xs">|</div></li>
+                            }
+                            if (ActiveLink != "About" && ActiveLink != "Products")
+                            {
+                                <li><div class="menulinkbar hidden-xs">|</div></li>
+                                <li>@Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "menulink" })</li>
+                                <li><div class="menulinkbar hidden-xs">|</div></li>
+                                <li>@Html.ActionLink("PRODUCTS", "Index", "Products", null, new { @class = "menulink" })</li>
+                                <li><div class="menulinkbar hidden-xs">|</div></li>
+                            }
+
+                            if (ActiveLink == "Contact")
+                            {
+                                <li>@Html.ActionLink("CONTACTS", "Contact", "Home", null, new { @class = "menulinkactive" })</li>
+                            }
+                            else
+                            {
+                                <li>@Html.ActionLink("CONTACTS", "Contact", "Home", null, new { @class = "menulink" })</li>
+                            }
+
+                        }
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
