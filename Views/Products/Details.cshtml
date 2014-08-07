@@ -1,13 +1,13 @@
 ﻿@model Maderna.Models.Products
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Product Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="row row-centered">
     <div class="col-centered col-products-fixed">
-        <img src="~/Content/images/Product-1-Big.jpg" id="product-image" class="product-image" />
+        <img src="~/Content/images/Product-1-Big.jpg" id="product-image" class="product-image" alt="Big product image."/>
     </div>
     <div class="col-centered-middle">
         <div class="product-text">
@@ -18,10 +18,10 @@
                 @Html.DisplayTextFor(model => model.Description)
                 <div class="row">
                     <div class="product-thumb">
-                        <img src="/Content/images/Supersmall-Thum1.jpg" onclick='changeImage("/Content/images/Product-1-Big.jpg");'/>
-                        <img src="/Content/images/Supersmall-Thum2.jpg" onclick='changeImage("/Content/images/Product-2-Big.jpg");'>
-                        <img src="/Content/images/Supersmall-Thum3.jpg" onclick='changeImage("/Content/images/Product-3-Big.jpg");'>
-                        <img src="/Content/images/Supersmall-Thum4.jpg" onclick='changeImage("/Content/images/Product-4-Big.jpg");'>
+                        <img src="/Content/images/Supersmall-Thum1.jpg" alt="Product thumbnail." onclick='changeImage("/Content/images/Product-1-Big.jpg");'/>
+                        <img src="/Content/images/Supersmall-Thum2.jpg" alt="Product thumbnail." onclick='changeImage("/Content/images/Product-2-Big.jpg");'>
+                        <img src="/Content/images/Supersmall-Thum3.jpg" alt="Product thumbnail." onclick='changeImage("/Content/images/Product-3-Big.jpg");'>
+                        <img src="/Content/images/Supersmall-Thum4.jpg" alt="Product thumbnail." onclick='changeImage("/Content/images/Product-4-Big.jpg");'>
                     </div>
                 </div>
             </div>

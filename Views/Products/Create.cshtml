@@ -3,7 +3,7 @@
 
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create Product";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -12,9 +12,8 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+     @Html.ValidationSummary(true)
     <div class="form-horizontal">
-        @Html.ValidationSummary(true)
-
         <div class="row">
 
             <div class="col-md-2">
@@ -48,11 +47,9 @@
                             }
                         </ul>
                     </div>
-
                 </div>
-
-
             </div>
+
             <form action="~/Products/SaveDropzoneJsUploadedFiles" class="dropzone" id="dropzoneJsForm"></form>
             <div class="col-md-4">
                 <form action="~/Products/SaveDropzoneJsUploadedFiles" class="dropzone" id="dropzoneJsForm2"></form>
@@ -69,9 +66,6 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
@@ -91,7 +85,7 @@
                     //myDropzone.processQueue(); // Tell Dropzone to process all queued files.
                 });
 
-                // You might want to show the submit button only when 
+                // You might want to show the submit button only when
                 // files are dropped here:
                 this.on("addedfile", function (file) {
 
@@ -118,7 +112,7 @@
                     file.previewElement.appendChild(removeButton);
 
 
-                    
+
                 });
             }
         };
